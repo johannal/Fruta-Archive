@@ -95,7 +95,7 @@ struct AppSidebarNavigation: View {
                         .keyboardShortcut(.defaultAction)
                     }
                     .padding()
-                    .background(VisualEffectBlur())
+                    .backgroundMaterial(.regular)
                 }
                 .frame(minWidth: 400, maxWidth: 600, minHeight: 400, maxHeight: 600)
                 .environmentObject(model)

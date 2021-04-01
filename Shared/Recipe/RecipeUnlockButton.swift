@@ -80,7 +80,7 @@ struct RecipeUnlockButton: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 225)
                 .accessibility(hidden: true)
-            bar.background(VisualEffectBlur())
+            bar.backgroundMaterial(.regular)
         }
         .clipShape(shape)
         .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 5)

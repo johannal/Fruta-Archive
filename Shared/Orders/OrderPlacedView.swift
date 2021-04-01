@@ -26,14 +26,6 @@ struct OrderPlacedView: View {
         return !model.hasAccount
     }
     
-    var blurView: some View {
-        #if os(iOS)
-        return VisualEffectBlur(blurStyle: .systemUltraThinMaterial)
-        #else
-        return VisualEffectBlur()
-        #endif
-    }
-    
     var signUpButton: some View {
         SignInWithAppleButton(.signUp, onRequest: { _ in }, onCompletion: model.authorizeUser)
             .frame(minWidth: 100, maxWidth: 400)
@@ -79,7 +71,8 @@ struct OrderPlacedView: View {
                     Color("order-placed-background")
                 }
                 
-                blurView
+                Color.clear
+                    .backgroundMaterial(.ultraThin)
                     .opacity(model.order!.isReady ? 0 : 1)
             }
             .ignoresSafeArea()
@@ -139,12 +132,7 @@ struct OrderPlacedView: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .background(
-            blurView
-                .opacity(orderReady ? 1 : 0)
-                .padding(.bottom, -100)
-                .ignoresSafeArea()
-        )
+        .backgroundMaterial(.thin)
     }
     
     struct Card: View {

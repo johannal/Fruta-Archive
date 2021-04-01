@@ -11,14 +11,6 @@ import AuthenticationServices
 struct RewardsView: View {
     @EnvironmentObject private var model: FrutaModel
     
-    var blurView: some View {
-        #if os(iOS)
-        return VisualEffectBlur(blurStyle: .systemThinMaterial)
-        #else
-        return VisualEffectBlur()
-        #endif
-    }
-    
     var signUpButton: some View {
         SignInWithAppleButton(.signUp, onRequest: { _ in }, onCompletion: model.authorizeUser)
             .frame(minWidth: 100, maxWidth: 400)
@@ -47,7 +39,7 @@ struct RewardsView: View {
                 .padding(.horizontal, 20)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(blurView.ignoresSafeArea())
+                .backgroundMaterial(.thin)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             }
         }

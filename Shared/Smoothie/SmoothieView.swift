@@ -38,7 +38,7 @@ struct SmoothieView: View {
             .padding(.horizontal, 40)
             .padding(.vertical, 16)
         }
-        .background(VisualEffectBlur().edgesIgnoringSafeArea(.all))
+        .backgroundMaterial(.regular)
     }
     
     var body: some View {
@@ -69,7 +69,7 @@ struct SmoothieView: View {
                     .keyboardShortcut(.defaultAction)
                 }
                 .padding()
-                .background(VisualEffectBlur())
+                .backgroundMaterial(.regular)
                 #endif
             }
             .toolbar {
@@ -106,8 +106,8 @@ struct SmoothieView: View {
             .overlay(bottomBar, alignment: .bottom)
             .accessibility(hidden: selectedIngredientID != nil)
 
-            VisualEffectBlur()
-                .ignoresSafeArea()
+            Color.clear
+                .backgroundMaterial(.regular)
                 .opacity(selectedIngredientID != nil ? 1 : 0)
             
             ForEach(smoothie.menuIngredients) { measuredIngredient in

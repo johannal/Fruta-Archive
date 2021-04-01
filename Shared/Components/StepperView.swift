@@ -40,7 +40,7 @@ struct StepperView: View {
         .accessibilityElement(children: .contain)
         .font(Font.title2.bold())
         .foregroundColor(.primary)
-        .background(VisualEffectBlur())
+        .backgroundMaterial(.regular)
         .contentShape(Capsule())
         .clipShape(Capsule())
         .rotation3DEffect(.degrees(3 * tilt), axis: (x: 0, y: 1, z: 0))

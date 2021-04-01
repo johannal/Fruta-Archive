@@ -38,22 +38,14 @@ struct IngredientGraphic: View {
             }
             
             if style == .cardBack {
-                #if os(iOS)
-                VisualEffectBlur(blurStyle: .systemThinMaterial, vibrancyStyle: .fill) {
+                ZStack {
                     if let nutritionFact = ingredient.nutritionFact {
                         NutritionFactView(nutritionFact: nutritionFact)
                             .padding(.bottom, 70)
                     }
                     cardControls(for: .back)
                 }
-                #else
-                VisualEffectBlur()
-                if let nutritionFact = ingredient.nutritionFact {
-                    NutritionFactView(nutritionFact: nutritionFact)
-                        .padding(.bottom, 70)
-                }
-                cardControls(for: .back)
-                #endif
+                .backgroundMaterial(.thin)
             }
         }
         .frame(minWidth: 130, maxWidth: 400, maxHeight: 500)
