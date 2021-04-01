@@ -14,6 +14,92 @@
 		5E612415244E8B32004DDFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6123FF244E8B32004DDFF7 /* Assets.xcassets */; };
 		5EBA05C82463AD9F003B66CF /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBA05C72463AD9F003B66CF /* Preferences.swift */; };
 		5ED308232460CD38000B64A7 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED308222460CD38000B64A7 /* VisualEffectView.swift */; };
+		610F540F2615805E001D3AA0 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CC26157D870046AAA9 /* BubbleView.swift */; };
+		610F54102615805E001D3AA0 /* CountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CD26157D870046AAA9 /* CountButton.swift */; };
+		610F54112615805E001D3AA0 /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CF26157D870046AAA9 /* AnimatableFontModifier.swift */; };
+		610F54122615805E001D3AA0 /* CardActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CE26157D870046AAA9 /* CardActionButton.swift */; };
+		610F54132615805E001D3AA0 /* BubbleBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C926157D870046AAA9 /* BubbleBackground.swift */; };
+		610F54142615805E001D3AA0 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CA26157D870046AAA9 /* StepperView.swift */; };
+		610F54152615805E001D3AA0 /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CB26157D870046AAA9 /* FlipView.swift */; };
+		610F54162615805E001D3AA0 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CC26157D870046AAA9 /* BubbleView.swift */; };
+		610F54172615805E001D3AA0 /* CountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CD26157D870046AAA9 /* CountButton.swift */; };
+		610F54182615805E001D3AA0 /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CF26157D870046AAA9 /* AnimatableFontModifier.swift */; };
+		610F54192615805E001D3AA0 /* CardActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CE26157D870046AAA9 /* CardActionButton.swift */; };
+		610F541A2615805E001D3AA0 /* BubbleBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C926157D870046AAA9 /* BubbleBackground.swift */; };
+		610F541B2615805E001D3AA0 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CA26157D870046AAA9 /* StepperView.swift */; };
+		610F541C2615805E001D3AA0 /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1CB26157D870046AAA9 /* FlipView.swift */; };
+		610F541D26158061001D3AA0 /* IngredientGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EC26157D870046AAA9 /* IngredientGraphic.swift */; };
+		610F541E26158061001D3AA0 /* IngredientCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EB26157D870046AAA9 /* IngredientCard.swift */; };
+		610F541F26158061001D3AA0 /* Ingredient+NutritionFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E926157D870046AAA9 /* Ingredient+NutritionFacts.swift */; };
+		610F542026158061001D3AA0 /* Ingredient+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E826157D870046AAA9 /* Ingredient+SwiftUI.swift */; };
+		610F542126158061001D3AA0 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EA26157D870046AAA9 /* Ingredient.swift */; };
+		610F542226158062001D3AA0 /* IngredientGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EC26157D870046AAA9 /* IngredientGraphic.swift */; };
+		610F542326158062001D3AA0 /* IngredientCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EB26157D870046AAA9 /* IngredientCard.swift */; };
+		610F542426158062001D3AA0 /* Ingredient+NutritionFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E926157D870046AAA9 /* Ingredient+NutritionFacts.swift */; };
+		610F542526158062001D3AA0 /* Ingredient+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E826157D870046AAA9 /* Ingredient+SwiftUI.swift */; };
+		610F542626158062001D3AA0 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EA26157D870046AAA9 /* Ingredient.swift */; };
+		610F542726158066001D3AA0 /* FrutaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E226157D870046AAA9 /* FrutaModel.swift */; };
+		610F542826158066001D3AA0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E326157D870046AAA9 /* Order.swift */; };
+		610F542926158066001D3AA0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E626157D870046AAA9 /* Account.swift */; };
+		610F542A26158066001D3AA0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E526157D870046AAA9 /* Store.swift */; };
+		610F542B26158066001D3AA0 /* FrutaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E226157D870046AAA9 /* FrutaModel.swift */; };
+		610F542C26158066001D3AA0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E326157D870046AAA9 /* Order.swift */; };
+		610F542D26158066001D3AA0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E626157D870046AAA9 /* Account.swift */; };
+		610F542E26158066001D3AA0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E526157D870046AAA9 /* Store.swift */; };
+		610F542F26158068001D3AA0 /* AppSidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DF26157D870046AAA9 /* AppSidebarNavigation.swift */; };
+		610F543026158068001D3AA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E026157D870046AAA9 /* ContentView.swift */; };
+		610F543126158069001D3AA0 /* AppSidebarNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DF26157D870046AAA9 /* AppSidebarNavigation.swift */; };
+		610F543226158069001D3AA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1E026157D870046AAA9 /* ContentView.swift */; };
+		610F54332615806B001D3AA0 /* OrderPlacedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C526157D870046AAA9 /* OrderPlacedView.swift */; };
+		610F54342615806B001D3AA0 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C626157D870046AAA9 /* RewardsView.swift */; };
+		610F54352615806B001D3AA0 /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C726157D870046AAA9 /* PaymentButton.swift */; };
+		610F54362615806B001D3AA0 /* RewardsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C426157D870046AAA9 /* RewardsCard.swift */; };
+		610F54372615806B001D3AA0 /* OrderPlacedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C526157D870046AAA9 /* OrderPlacedView.swift */; };
+		610F54382615806B001D3AA0 /* RewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C626157D870046AAA9 /* RewardsView.swift */; };
+		610F54392615806B001D3AA0 /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C726157D870046AAA9 /* PaymentButton.swift */; };
+		610F543A2615806B001D3AA0 /* RewardsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1C426157D870046AAA9 /* RewardsCard.swift */; };
+		610F543B2615806E001D3AA0 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DB26157D870046AAA9 /* RecipeView.swift */; };
+		610F543C2615806E001D3AA0 /* MeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DC26157D870046AAA9 /* MeasurementView.swift */; };
+		610F543D2615806E001D3AA0 /* RecipeUnlockButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DA26157D870046AAA9 /* RecipeUnlockButton.swift */; };
+		610F543E2615806E001D3AA0 /* MeasuredIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D926157D870046AAA9 /* MeasuredIngredient.swift */; };
+		610F543F2615806E001D3AA0 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DD26157D870046AAA9 /* RecipeList.swift */; };
+		610F54402615806E001D3AA0 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DB26157D870046AAA9 /* RecipeView.swift */; };
+		610F54412615806E001D3AA0 /* MeasurementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DC26157D870046AAA9 /* MeasurementView.swift */; };
+		610F54422615806E001D3AA0 /* RecipeUnlockButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DA26157D870046AAA9 /* RecipeUnlockButton.swift */; };
+		610F54432615806E001D3AA0 /* MeasuredIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D926157D870046AAA9 /* MeasuredIngredient.swift */; };
+		610F54442615806E001D3AA0 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1DD26157D870046AAA9 /* RecipeList.swift */; };
+		610F544526158071001D3AA0 /* SmoothieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F326157D870046AAA9 /* SmoothieList.swift */; };
+		610F544626158071001D3AA0 /* Smoothie+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F726157D870046AAA9 /* Smoothie+SwiftUI.swift */; };
+		610F544726158071001D3AA0 /* SmoothieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EE26157D870046AAA9 /* SmoothieRow.swift */; };
+		610F544826158071001D3AA0 /* SmoothieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EF26157D870046AAA9 /* SmoothieView.swift */; };
+		610F544926158071001D3AA0 /* RedeemSmoothieButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F526157D870046AAA9 /* RedeemSmoothieButton.swift */; };
+		610F544A26158071001D3AA0 /* FavoriteSmoothies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F426157D870046AAA9 /* FavoriteSmoothies.swift */; };
+		610F544B26158071001D3AA0 /* SmoothieFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F126157D870046AAA9 /* SmoothieFavoriteButton.swift */; };
+		610F544C26158071001D3AA0 /* SmoothieHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F226157D870046AAA9 /* SmoothieHeaderView.swift */; };
+		610F544D26158071001D3AA0 /* SmoothieMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F626157D870046AAA9 /* SmoothieMenu.swift */; };
+		610F544E26158071001D3AA0 /* Smoothie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F026157D870046AAA9 /* Smoothie.swift */; };
+		610F544F26158071001D3AA0 /* SmoothieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F326157D870046AAA9 /* SmoothieList.swift */; };
+		610F545026158071001D3AA0 /* Smoothie+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F726157D870046AAA9 /* Smoothie+SwiftUI.swift */; };
+		610F545126158071001D3AA0 /* SmoothieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EE26157D870046AAA9 /* SmoothieRow.swift */; };
+		610F545226158071001D3AA0 /* SmoothieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1EF26157D870046AAA9 /* SmoothieView.swift */; };
+		610F545326158071001D3AA0 /* RedeemSmoothieButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F526157D870046AAA9 /* RedeemSmoothieButton.swift */; };
+		610F545426158071001D3AA0 /* FavoriteSmoothies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F426157D870046AAA9 /* FavoriteSmoothies.swift */; };
+		610F545526158071001D3AA0 /* SmoothieFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F126157D870046AAA9 /* SmoothieFavoriteButton.swift */; };
+		610F545626158071001D3AA0 /* SmoothieHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F226157D870046AAA9 /* SmoothieHeaderView.swift */; };
+		610F545726158071001D3AA0 /* SmoothieMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F626157D870046AAA9 /* SmoothieMenu.swift */; };
+		610F545826158071001D3AA0 /* Smoothie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1F026157D870046AAA9 /* Smoothie.swift */; };
+		610F545926158073001D3AA0 /* CircleToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D126157D870046AAA9 /* CircleToggleStyle.swift */; };
+		610F545A26158073001D3AA0 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D226157D870046AAA9 /* Animations.swift */; };
+		610F545B26158073001D3AA0 /* SquishableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D326157D870046AAA9 /* SquishableButtonStyle.swift */; };
+		610F545C26158073001D3AA0 /* CircleToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D126157D870046AAA9 /* CircleToggleStyle.swift */; };
+		610F545D26158073001D3AA0 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D226157D870046AAA9 /* Animations.swift */; };
+		610F545E26158073001D3AA0 /* SquishableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D326157D870046AAA9 /* SquishableButtonStyle.swift */; };
+		610F545F26158076001D3AA0 /* FrutaWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D726157D870046AAA9 /* FrutaWidgets.swift */; };
+		610F546026158076001D3AA0 /* RewardsCardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D526157D870046AAA9 /* RewardsCardWidget.swift */; };
+		610F546126158076001D3AA0 /* FeaturedSmoothieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D626157D870046AAA9 /* FeaturedSmoothieWidget.swift */; };
+		610F546226158076001D3AA0 /* FrutaWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D726157D870046AAA9 /* FrutaWidgets.swift */; };
+		610F546326158076001D3AA0 /* RewardsCardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D526157D870046AAA9 /* RewardsCardWidget.swift */; };
+		610F546426158076001D3AA0 /* FeaturedSmoothieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D626157D870046AAA9 /* FeaturedSmoothieWidget.swift */; };
 		611716C82469DF41000FFDD9 /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611716C72469DF41000FFDD9 /* AppTabNavigation.swift */; };
 		619A41CA2466033D00C6C4CC /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A41C82466033A00C6C4CC /* VisualEffectView.swift */; };
 		9ED9EC3B24821A0200076765 /* NutritionFacts in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED9EC3A24821A0200076765 /* NutritionFacts */; };
@@ -580,9 +666,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				610F54352615806B001D3AA0 /* PaymentButton.swift in Sources */,
+				610F54102615805E001D3AA0 /* CountButton.swift in Sources */,
+				610F54122615805E001D3AA0 /* CardActionButton.swift in Sources */,
+				610F543026158068001D3AA0 /* ContentView.swift in Sources */,
+				610F542126158061001D3AA0 /* Ingredient.swift in Sources */,
 				5ED308232460CD38000B64A7 /* VisualEffectView.swift in Sources */,
+				610F543B2615806E001D3AA0 /* RecipeView.swift in Sources */,
+				610F543F2615806E001D3AA0 /* RecipeList.swift in Sources */,
+				610F544526158071001D3AA0 /* SmoothieList.swift in Sources */,
+				610F544C26158071001D3AA0 /* SmoothieHeaderView.swift in Sources */,
+				610F543D2615806E001D3AA0 /* RecipeUnlockButton.swift in Sources */,
+				610F544826158071001D3AA0 /* SmoothieView.swift in Sources */,
 				5E612410244E8B32004DDFF7 /* FrutaApp.swift in Sources */,
+				610F544B26158071001D3AA0 /* SmoothieFavoriteButton.swift in Sources */,
+				610F542926158066001D3AA0 /* Account.swift in Sources */,
+				610F54142615805E001D3AA0 /* StepperView.swift in Sources */,
+				610F546026158076001D3AA0 /* RewardsCardWidget.swift in Sources */,
+				610F542826158066001D3AA0 /* Order.swift in Sources */,
+				610F543C2615806E001D3AA0 /* MeasurementView.swift in Sources */,
+				610F544626158071001D3AA0 /* Smoothie+SwiftUI.swift in Sources */,
+				610F542F26158068001D3AA0 /* AppSidebarNavigation.swift in Sources */,
+				610F546126158076001D3AA0 /* FeaturedSmoothieWidget.swift in Sources */,
+				610F545A26158073001D3AA0 /* Animations.swift in Sources */,
+				610F54362615806B001D3AA0 /* RewardsCard.swift in Sources */,
+				610F544926158071001D3AA0 /* RedeemSmoothieButton.swift in Sources */,
+				610F545926158073001D3AA0 /* CircleToggleStyle.swift in Sources */,
+				610F544D26158071001D3AA0 /* SmoothieMenu.swift in Sources */,
+				610F54152615805E001D3AA0 /* FlipView.swift in Sources */,
+				610F540F2615805E001D3AA0 /* BubbleView.swift in Sources */,
+				610F541D26158061001D3AA0 /* IngredientGraphic.swift in Sources */,
+				610F54132615805E001D3AA0 /* BubbleBackground.swift in Sources */,
+				610F54332615806B001D3AA0 /* OrderPlacedView.swift in Sources */,
 				611716C82469DF41000FFDD9 /* AppTabNavigation.swift in Sources */,
+				610F542026158061001D3AA0 /* Ingredient+SwiftUI.swift in Sources */,
+				610F542A26158066001D3AA0 /* Store.swift in Sources */,
+				610F543E2615806E001D3AA0 /* MeasuredIngredient.swift in Sources */,
+				610F544A26158071001D3AA0 /* FavoriteSmoothies.swift in Sources */,
+				610F544E26158071001D3AA0 /* Smoothie.swift in Sources */,
+				610F54342615806B001D3AA0 /* RewardsView.swift in Sources */,
+				610F541F26158061001D3AA0 /* Ingredient+NutritionFacts.swift in Sources */,
+				610F545F26158076001D3AA0 /* FrutaWidgets.swift in Sources */,
+				610F541E26158061001D3AA0 /* IngredientCard.swift in Sources */,
+				610F542726158066001D3AA0 /* FrutaModel.swift in Sources */,
+				610F544726158071001D3AA0 /* SmoothieRow.swift in Sources */,
+				610F545B26158073001D3AA0 /* SquishableButtonStyle.swift in Sources */,
+				610F54112615805E001D3AA0 /* AnimatableFontModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,9 +719,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				610F54392615806B001D3AA0 /* PaymentButton.swift in Sources */,
+				610F54172615805E001D3AA0 /* CountButton.swift in Sources */,
+				610F54192615805E001D3AA0 /* CardActionButton.swift in Sources */,
+				610F543226158069001D3AA0 /* ContentView.swift in Sources */,
+				610F542626158062001D3AA0 /* Ingredient.swift in Sources */,
 				619A41CA2466033D00C6C4CC /* VisualEffectView.swift in Sources */,
+				610F54402615806E001D3AA0 /* RecipeView.swift in Sources */,
+				610F54442615806E001D3AA0 /* RecipeList.swift in Sources */,
+				610F544F26158071001D3AA0 /* SmoothieList.swift in Sources */,
+				610F545626158071001D3AA0 /* SmoothieHeaderView.swift in Sources */,
+				610F54422615806E001D3AA0 /* RecipeUnlockButton.swift in Sources */,
+				610F545226158071001D3AA0 /* SmoothieView.swift in Sources */,
 				5EBA05C82463AD9F003B66CF /* Preferences.swift in Sources */,
+				610F545526158071001D3AA0 /* SmoothieFavoriteButton.swift in Sources */,
+				610F542D26158066001D3AA0 /* Account.swift in Sources */,
+				610F541B2615805E001D3AA0 /* StepperView.swift in Sources */,
+				610F546326158076001D3AA0 /* RewardsCardWidget.swift in Sources */,
+				610F542C26158066001D3AA0 /* Order.swift in Sources */,
+				610F54412615806E001D3AA0 /* MeasurementView.swift in Sources */,
+				610F545026158071001D3AA0 /* Smoothie+SwiftUI.swift in Sources */,
+				610F543126158069001D3AA0 /* AppSidebarNavigation.swift in Sources */,
+				610F546426158076001D3AA0 /* FeaturedSmoothieWidget.swift in Sources */,
+				610F545D26158073001D3AA0 /* Animations.swift in Sources */,
+				610F543A2615806B001D3AA0 /* RewardsCard.swift in Sources */,
+				610F545326158071001D3AA0 /* RedeemSmoothieButton.swift in Sources */,
+				610F545C26158073001D3AA0 /* CircleToggleStyle.swift in Sources */,
+				610F545726158071001D3AA0 /* SmoothieMenu.swift in Sources */,
+				610F541C2615805E001D3AA0 /* FlipView.swift in Sources */,
+				610F54162615805E001D3AA0 /* BubbleView.swift in Sources */,
+				610F542226158062001D3AA0 /* IngredientGraphic.swift in Sources */,
+				610F541A2615805E001D3AA0 /* BubbleBackground.swift in Sources */,
+				610F54372615806B001D3AA0 /* OrderPlacedView.swift in Sources */,
 				5E612411244E8B32004DDFF7 /* FrutaApp.swift in Sources */,
+				610F542526158062001D3AA0 /* Ingredient+SwiftUI.swift in Sources */,
+				610F542E26158066001D3AA0 /* Store.swift in Sources */,
+				610F54432615806E001D3AA0 /* MeasuredIngredient.swift in Sources */,
+				610F545426158071001D3AA0 /* FavoriteSmoothies.swift in Sources */,
+				610F545826158071001D3AA0 /* Smoothie.swift in Sources */,
+				610F54382615806B001D3AA0 /* RewardsView.swift in Sources */,
+				610F542426158062001D3AA0 /* Ingredient+NutritionFacts.swift in Sources */,
+				610F546226158076001D3AA0 /* FrutaWidgets.swift in Sources */,
+				610F542326158062001D3AA0 /* IngredientCard.swift in Sources */,
+				610F542B26158066001D3AA0 /* FrutaModel.swift in Sources */,
+				610F545126158071001D3AA0 /* SmoothieRow.swift in Sources */,
+				610F545E26158073001D3AA0 /* SquishableButtonStyle.swift in Sources */,
+				610F54182615805E001D3AA0 /* AnimatableFontModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
