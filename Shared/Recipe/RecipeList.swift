@@ -6,10 +6,10 @@
 import SwiftUI
 
 struct RecipeList: View {
-    @EnvironmentObject private var store: Store
+    @EnvironmentObject private var model: FrutaModel
     
     var smoothies: [Smoothie] {
-        if store.unlockedAllRecipes {
+        if model.allRecipesUnlocked {
             return Smoothie.all
         } else {
             return Smoothie.all.filter { $0.hasFreeRecipe }
@@ -34,17 +34,17 @@ struct RecipeList: View {
     
     var unlockButton: some View {
         Group {
-            if !store.unlockedAllRecipes {
-                if let product = store.unlockAllRecipesProduct {
-                    RecipeUnlockButton(product: .init(for: product), purchaseAction: { store.purchaseProduct(product) })
+            if !model.allRecipesUnlocked {
+                if let product = model.unlockAllRecipesProduct {
+                    RecipeUnlockButton(product: .init(for: product), purchaseAction: { model.purchaseProduct(product) })
                 } else {
                     RecipeUnlockButton(product: .init(title: "Unlock All Recipes",
                                 description: "Loading...", availability: .unavailable), purchaseAction: {})
                 }
             }
         }
-        .scaleEffect(store.unlockedAllRecipes ? 0.8 : 1)
-        .offset(y: store.unlockedAllRecipes ? cardOffscreenOffset : 0)
+        .scaleEffect(model.allRecipesUnlocked ? 0.8 : 1)
+        .offset(y: model.allRecipesUnlocked ? cardOffscreenOffset : 0)
         .clipped()
     }
     
@@ -65,14 +65,14 @@ struct RecipeList: View {
             #endif
         }, alignment: .bottom)
         .navigationTitle("Recipes")
-        .animation(.spring(response: 1, dampingFraction: 1), value: store.unlockedAllRecipes)
+        .animation(.spring(response: 1, dampingFraction: 1), value: model.allRecipesUnlocked)
     }
 }
 
 struct RecipeList_Previews: PreviewProvider {
-    static let unlocked: Store = {
-        let store = Store()
-        store.unlockedAllRecipes = true
+    static let unlocked: FrutaModel = {
+        let store = FrutaModel()
+        store.allRecipesUnlocked = true
         return store
     }()
     static var previews: some View {
@@ -80,7 +80,7 @@ struct RecipeList_Previews: PreviewProvider {
             NavigationView {
                 RecipeList()
             }
-            .environmentObject(Store())
+            .environmentObject(FrutaModel())
             .previewDisplayName("Locked")
             
             NavigationView {
@@ -89,6 +89,5 @@ struct RecipeList_Previews: PreviewProvider {
             .environmentObject(unlocked)
             .previewDisplayName("Unlocked")
         }
-        .environmentObject(FrutaModel())
     }
 }
