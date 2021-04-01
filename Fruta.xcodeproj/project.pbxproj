@@ -505,12 +505,6 @@
 		6111A1F726157D870046AAA9 /* Smoothie+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smoothie+SwiftUI.swift"; sourceTree = "<group>"; };
 		611716C72469DF41000FFDD9 /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
 		613B66762484659C0030791E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Shared/README.md; sourceTree = "<group>"; };
-		618ACDAC26159805008AB50C /* Info-Widget.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Widget.plist"; sourceTree = "<group>"; };
-		618ACDAD26159805008AB50C /* Info-Extended.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Extended.plist"; sourceTree = "<group>"; };
-		618ACDAE26159805008AB50C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		618ACDAF2615981A008AB50C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		618ACDB02615981A008AB50C /* Info-Extended.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Extended.plist"; sourceTree = "<group>"; };
-		618ACDB12615981A008AB50C /* Info-Widget.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Widget.plist"; sourceTree = "<group>"; };
 		619A41C82466033A00C6C4CC /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		7FC1AA3A24832F0200A6CF1F /* Fruta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fruta.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -607,9 +601,6 @@
 		5E612406244E8B32004DDFF7 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				618ACDB02615981A008AB50C /* Info-Extended.plist */,
-				618ACDB12615981A008AB50C /* Info-Widget.plist */,
-				618ACDAF2615981A008AB50C /* Info.plist */,
 				7FC1AA3A24832F0200A6CF1F /* Fruta.entitlements */,
 				5ED308222460CD38000B64A7 /* VisualEffectView.swift */,
 				611716C72469DF41000FFDD9 /* AppTabNavigation.swift */,
@@ -620,9 +611,6 @@
 		5E61240D244E8B32004DDFF7 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				618ACDAD26159805008AB50C /* Info-Extended.plist */,
-				618ACDAC26159805008AB50C /* Info-Widget.plist */,
-				618ACDAE26159805008AB50C /* Info.plist */,
 				5E61240F244E8B32004DDFF7 /* macOS.entitlements */,
 				5EBA05C72463AD9F003B66CF /* Preferences.swift */,
 				619A41C82466033A00C6C4CC /* VisualEffectView.swift */,
