@@ -687,11 +687,11 @@
 		5E612406244E8B32004DDFF7 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				611716C72469DF41000FFDD9 /* AppTabNavigation.swift */,
+				612F3D982615A31A00137D77 /* FrutaAppClip.swift */,
 				7FC1AA3A24832F0200A6CF1F /* iOS.entitlements */,
 				612F3DD12615A38800137D77 /* iOSClip.entitlements */,
 				5ED308222460CD38000B64A7 /* VisualEffectView.swift */,
-				611716C72469DF41000FFDD9 /* AppTabNavigation.swift */,
-				612F3D982615A31A00137D77 /* FrutaAppClip.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -709,16 +709,16 @@
 		610F54652615818D001D3AA0 /* NutritionFacts */ = {
 			isa = PBXGroup;
 			children = (
-				610F54662615818D001D3AA0 /* NutritionFactView.swift */,
-				610F54672615818D001D3AA0 /* NutritionFact+Decodable.swift */,
-				610F54682615818D001D3AA0 /* NutritionRow.swift */,
-				610F54692615818D001D3AA0 /* Resources */,
-				610F54702615818D001D3AA0 /* NutritionFact+Energy.swift */,
 				610F54712615818D001D3AA0 /* CalorieCountView.swift */,
-				610F54722615818D001D3AA0 /* Nutritions.swift */,
-				610F54732615818D001D3AA0 /* NutritionFact.swift */,
-				610F54742615818D001D3AA0 /* UnitIcons.swift */,
 				610F54752615818D001D3AA0 /* DisplayableMeasurement.swift */,
+				610F54732615818D001D3AA0 /* NutritionFact.swift */,
+				610F54672615818D001D3AA0 /* NutritionFact+Decodable.swift */,
+				610F54702615818D001D3AA0 /* NutritionFact+Energy.swift */,
+				610F54662615818D001D3AA0 /* NutritionFactView.swift */,
+				610F54682615818D001D3AA0 /* NutritionRow.swift */,
+				610F54722615818D001D3AA0 /* Nutritions.swift */,
+				610F54692615818D001D3AA0 /* Resources */,
+				610F54742615818D001D3AA0 /* UnitIcons.swift */,
 			);
 			path = NutritionFacts;
 			sourceTree = "<group>";
@@ -736,10 +736,10 @@
 		6111A1C326157D870046AAA9 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
-				6111A1C426157D870046AAA9 /* RewardsCard.swift */,
 				6111A1C526157D870046AAA9 /* OrderPlacedView.swift */,
-				6111A1C626157D870046AAA9 /* RewardsView.swift */,
 				6111A1C726157D870046AAA9 /* PaymentButton.swift */,
+				6111A1C426157D870046AAA9 /* RewardsCard.swift */,
+				6111A1C626157D870046AAA9 /* RewardsView.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -747,13 +747,13 @@
 		6111A1C826157D870046AAA9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				6111A1C926157D870046AAA9 /* BubbleBackground.swift */,
-				6111A1CA26157D870046AAA9 /* StepperView.swift */,
-				6111A1CB26157D870046AAA9 /* FlipView.swift */,
-				6111A1CC26157D870046AAA9 /* BubbleView.swift */,
-				6111A1CD26157D870046AAA9 /* CountButton.swift */,
-				6111A1CE26157D870046AAA9 /* CardActionButton.swift */,
 				6111A1CF26157D870046AAA9 /* AnimatableFontModifier.swift */,
+				6111A1C926157D870046AAA9 /* BubbleBackground.swift */,
+				6111A1CC26157D870046AAA9 /* BubbleView.swift */,
+				6111A1CE26157D870046AAA9 /* CardActionButton.swift */,
+				6111A1CD26157D870046AAA9 /* CountButton.swift */,
+				6111A1CB26157D870046AAA9 /* FlipView.swift */,
+				6111A1CA26157D870046AAA9 /* StepperView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -761,8 +761,8 @@
 		6111A1D026157D870046AAA9 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				6111A1D126157D870046AAA9 /* CircleToggleStyle.swift */,
 				6111A1D226157D870046AAA9 /* Animations.swift */,
+				6111A1D126157D870046AAA9 /* CircleToggleStyle.swift */,
 				6111A1D326157D870046AAA9 /* SquishableButtonStyle.swift */,
 			);
 			path = Styles;
@@ -782,10 +782,10 @@
 			isa = PBXGroup;
 			children = (
 				6111A1D926157D870046AAA9 /* MeasuredIngredient.swift */,
-				6111A1DA26157D870046AAA9 /* RecipeUnlockButton.swift */,
-				6111A1DB26157D870046AAA9 /* RecipeView.swift */,
 				6111A1DC26157D870046AAA9 /* MeasurementView.swift */,
 				6111A1DD26157D870046AAA9 /* RecipeList.swift */,
+				6111A1DA26157D870046AAA9 /* RecipeUnlockButton.swift */,
+				6111A1DB26157D870046AAA9 /* RecipeView.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -802,11 +802,11 @@
 		6111A1E126157D870046AAA9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6111A1E626157D870046AAA9 /* Account.swift */,
+				6111A1E426157D870046AAA9 /* Configuration.storekit */,
 				6111A1E226157D870046AAA9 /* FrutaModel.swift */,
 				6111A1E326157D870046AAA9 /* Order.swift */,
-				6111A1E426157D870046AAA9 /* Configuration.storekit */,
 				6111A1E526157D870046AAA9 /* Store.swift */,
-				6111A1E626157D870046AAA9 /* Account.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -814,9 +814,9 @@
 		6111A1E726157D870046AAA9 /* Ingredients */ = {
 			isa = PBXGroup;
 			children = (
-				6111A1E826157D870046AAA9 /* Ingredient+SwiftUI.swift */,
-				6111A1E926157D870046AAA9 /* Ingredient+NutritionFacts.swift */,
 				6111A1EA26157D870046AAA9 /* Ingredient.swift */,
+				6111A1E926157D870046AAA9 /* Ingredient+NutritionFacts.swift */,
+				6111A1E826157D870046AAA9 /* Ingredient+SwiftUI.swift */,
 				6111A1EB26157D870046AAA9 /* IngredientCard.swift */,
 				6111A1EC26157D870046AAA9 /* IngredientGraphic.swift */,
 			);
@@ -826,16 +826,16 @@
 		6111A1ED26157D870046AAA9 /* Smoothie */ = {
 			isa = PBXGroup;
 			children = (
-				6111A1EE26157D870046AAA9 /* SmoothieRow.swift */,
-				6111A1EF26157D870046AAA9 /* SmoothieView.swift */,
+				6111A1F426157D870046AAA9 /* FavoriteSmoothies.swift */,
+				6111A1F526157D870046AAA9 /* RedeemSmoothieButton.swift */,
 				6111A1F026157D870046AAA9 /* Smoothie.swift */,
+				6111A1F726157D870046AAA9 /* Smoothie+SwiftUI.swift */,
 				6111A1F126157D870046AAA9 /* SmoothieFavoriteButton.swift */,
 				6111A1F226157D870046AAA9 /* SmoothieHeaderView.swift */,
 				6111A1F326157D870046AAA9 /* SmoothieList.swift */,
-				6111A1F426157D870046AAA9 /* FavoriteSmoothies.swift */,
-				6111A1F526157D870046AAA9 /* RedeemSmoothieButton.swift */,
 				6111A1F626157D870046AAA9 /* SmoothieMenu.swift */,
-				6111A1F726157D870046AAA9 /* Smoothie+SwiftUI.swift */,
+				6111A1EE26157D870046AAA9 /* SmoothieRow.swift */,
+				6111A1EF26157D870046AAA9 /* SmoothieView.swift */,
 			);
 			path = Smoothie;
 			sourceTree = "<group>";
