@@ -1,16 +1,18 @@
-//
-//  ContentView.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+The primary entry point for the app's user interface. Can change between tab-based and sidebar-based navigation.
+*/
 
 import SwiftUI
 
-struct ContentView: View {    
+struct ContentView: View {
     #if os(iOS)
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     #endif
     
-    @ViewBuilder var body: some View {
+    var body: some View {
         #if os(iOS)
         if horizontalSizeClass == .compact {
             AppTabNavigation()
@@ -19,7 +21,6 @@ struct ContentView: View {
         }
         #else
         AppSidebarNavigation()
-            .frame(minWidth: 300, maxWidth: .infinity, minHeight: 400, maxHeight: .infinity)
         #endif
     }
 }

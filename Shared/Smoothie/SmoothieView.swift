@@ -1,94 +1,131 @@
-//
-//  SmoothieView.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+The smoothie detail view that offers the smoothie for sale and lists its ingredients.
+*/
 
 import SwiftUI
 import NutritionFacts
-import UtilityViews
+
+#if APPCLIP
+import StoreKit
+#endif
 
 struct SmoothieView: View {
     var smoothie: Smoothie
     
-    @State private var presentingSheet = false
+    @State private var presentingOrderPlacedSheet = false
+    @State private var presentingSecurityAlert = false
     @EnvironmentObject private var model: FrutaModel
     @Environment(\.colorScheme) private var colorScheme
     
     @State private var selectedIngredientID: Ingredient.ID?
+    @State private var topmostIngredientID: Ingredient.ID?
     @Namespace private var namespace
     
-    var isFavorite: Bool {
-        model.favoriteSmoothieIDs.contains(smoothie.id)
-    }
+    #if APPCLIP
+    @State private var presentingAppStoreOverlay = false
+    #endif
     
     var bottomBar: some View {
         VStack(spacing: 0) {
             Divider()
-            PaymentButton(action: orderSmoothie)
-                .padding(.horizontal, 40)
-                .padding(.vertical, 16)
+            Group {
+                if let account = model.account, account.canRedeemFreeSmoothie {
+                    RedeemSmoothieButton(action: redeemSmoothie)
+                } else {
+                    PaymentButton(action: orderSmoothie)
+                }
+            }
+            .padding(.horizontal, 40)
+            .padding(.vertical, 16)
         }
         .background(VisualEffectBlur().edgesIgnoringSafeArea(.all))
     }
     
-    var favoriteButton: some View {
-        let label = "\(isFavorite ? "Remove from" : "Add to") Favorites"
-        let icon = isFavorite ? "heart.fill" : "heart"
-        return Button(action: toggleFavorite) {
+    var body: some View {
+        Group {
             #if os(iOS)
-            Image(systemName: icon)
-                .imageScale(.large)
-                .contentShape(Rectangle())
+            container
             #else
-            Label(label, systemImage: icon)
+            container
+                .frame(minWidth: 500, idealWidth: 700, maxWidth: .infinity, minHeight: 400, maxHeight: .infinity)
             #endif
+        }
+        .background(Rectangle().fill(BackgroundStyle()).ignoresSafeArea())
+        .navigationTitle(smoothie.title)
+        .toolbar {
+            SmoothieFavoriteButton(smoothie: smoothie)
+        }
+        .sheet(isPresented: $presentingOrderPlacedSheet) {
+            VStack(spacing: 0) {
+                OrderPlacedView()
+                
+                #if os(macOS)
+                Divider()
+                HStack {
+                    Spacer()
+                    Button(action: { presentingOrderPlacedSheet = false }) {
+                        Text("Done")
+                    }
+                    .keyboardShortcut(.defaultAction)
+                }
+                .padding()
+                .background(VisualEffectBlur())
+                #endif
+            }
+            .toolbar {
+                #if os(iOS)
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(action: { presentingOrderPlacedSheet = false }) {
+                        Text("Done")
+                    }
+                }
+                #endif
+            }
+            .environmentObject(model)
+        }
+        .alert(isPresented: $presentingSecurityAlert) {
+            Alert(
+                title: Text("Payments Disabled"),
+                message: Text("The Fruta QR code was scanned too far from the shop, payments are disabled for your protection."),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
     
-    var body: some View {
+    var container: some View {
         ZStack {
             ScrollView {
-                content.padding(.bottom, 90)
+                #if os(iOS)
+                content
+                #else
+                content
+                    .frame(maxWidth: 600)
+                    .frame(maxWidth: .infinity)
+                #endif
             }
             .overlay(bottomBar, alignment: .bottom)
+            .accessibility(hidden: selectedIngredientID != nil)
 
-            ZStack {
-                if selectedIngredientID != nil {
-                    VisualEffectBlur()
-                        .edgesIgnoringSafeArea(.all)
-                }
-                
-                ForEach(smoothie.menuIngredients) { measuredIngredient in
-                    IngredientView(ingredient: measuredIngredient.ingredient, displayAsCard: selectedIngredientID == measuredIngredient.id, closeAction: deselectIngredient)
-                        .matchedGeometryEffect(id: measuredIngredient.id, in: namespace, isSource: selectedIngredientID == measuredIngredient.id)
-                        .shadow(color: Color.black.opacity(selectedIngredientID == measuredIngredient.id ? 0.2 : 0), radius: 20, y: 10)
-                        .padding(20)
-                        .opacity(selectedIngredientID == measuredIngredient.id ? 1 : 0)
-                        .zIndex(selectedIngredientID == measuredIngredient.id ? 1 : 0)
-                }
+            VisualEffectBlur()
+                .ignoresSafeArea()
+                .opacity(selectedIngredientID != nil ? 1 : 0)
+            
+            ForEach(smoothie.menuIngredients) { measuredIngredient in
+                let presenting = selectedIngredientID == measuredIngredient.id
+                IngredientCard(ingredient: measuredIngredient.ingredient, presenting: presenting, closeAction: deselectIngredient)
+                    .matchedGeometryEffect(id: measuredIngredient.id, in: namespace, isSource: presenting)
+                    .aspectRatio(0.75, contentMode: .fit)
+                    .shadow(color: Color.black.opacity(presenting ? 0.2 : 0), radius: 20, y: 10)
+                    .padding(20)
+                    .opacity(presenting ? 1 : 0)
+                    .zIndex(topmostIngredientID == measuredIngredient.id ? 1 : 0)
+                    .accessibilityElement(children: .contain)
+                    .accessibility(sortPriority: presenting ? 1 : 0)
+                    .accessibility(hidden: !presenting)
             }
-        }
-        .frame(minWidth: 300, idealWidth: 600, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
-        .background(Rectangle().fill(BackgroundStyle()).edgesIgnoringSafeArea(.all))
-        .navigationTitle(smoothie.title)
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                favoriteButton
-            }
-        }
-        .sheet(isPresented: $presentingSheet) {
-            NavigationView {
-                OrderPlacedView(isPresented: $presentingSheet)
-                    .toolbar {
-                        ToolbarItem(placement: .primaryAction) {
-                            Button(action: { self.presentingSheet = false }) {
-                                Text("Done")
-                                    .foregroundColor(.primary)
-                            }
-                        }
-                    }
-            }
-            .environmentObject(model)
         }
     }
     
@@ -101,46 +138,50 @@ struct SmoothieView: View {
                     .font(Font.title).bold()
                     .foregroundColor(.secondary)
                 
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 130), spacing: 16, alignment: .center)], alignment: .center, spacing: 16) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 130), spacing: 16, alignment: .top)], alignment: .center, spacing: 16) {
                     ForEach(smoothie.menuIngredients) { measuredIngredient in
-                        Button(action: {
-                            withAnimation(.openCard) {
-                                self.selectedIngredientID = measuredIngredient.id
-                            }
-                        }) {
-                            IngredientView(
-                                ingredient: measuredIngredient.ingredient,
-                                displayAsCard: selectedIngredientID == measuredIngredient.id,
-                                closeAction: deselectIngredient
-                            )
-                            .matchedGeometryEffect(
-                                id: measuredIngredient.id,
-                                in: namespace,
-                                isSource: selectedIngredientID != measuredIngredient.id
-                            )
+                        let ingredient = measuredIngredient.ingredient
+                        let presenting = selectedIngredientID == measuredIngredient.id
+                        Button(action: { select(ingredient: ingredient) }) {
+                            IngredientGraphic(ingredient: measuredIngredient.ingredient, style: presenting ? .cardFront : .thumbnail)
+                                .matchedGeometryEffect(
+                                    id: measuredIngredient.id,
+                                    in: namespace,
+                                    isSource: !presenting
+                                )
+                                .contentShape(Rectangle())
                         }
                         .buttonStyle(SquishableButtonStyle(fadeOnPress: false))
                         .aspectRatio(1, contentMode: .fit)
+                        .zIndex(topmostIngredientID == measuredIngredient.id ? 1 : 0)
+                        .accessibility(label: Text("\(ingredient.name) Ingredient"))
                     }
                 }
             }
             .padding()
         }
-        .frame(maxWidth: 600)
-        .frame(maxWidth: .infinity)
-    }
-    
-    func toggleFavorite() {
-        if isFavorite {
-            model.favoriteSmoothieIDs.remove(smoothie.id)
-        } else {
-            model.favoriteSmoothieIDs.insert(smoothie.id)
-        }
+        .padding(.bottom, 90)
     }
     
     func orderSmoothie() {
-        model.orderSmoothie(id: smoothie.id)
-        presentingSheet = true
+        guard model.applePayAllowed else {
+            presentingSecurityAlert = true
+            return
+        }
+        model.orderSmoothie(smoothie)
+        presentingOrderPlacedSheet = true
+    }
+    
+    func redeemSmoothie() {
+        model.redeemSmoothie(smoothie)
+        presentingOrderPlacedSheet = true
+    }
+    
+    func select(ingredient: Ingredient) {
+        topmostIngredientID = ingredient.id
+        withAnimation(.openCard) {
+            selectedIngredientID = ingredient.id
+        }
     }
     
     func deselectIngredient() {
@@ -163,7 +204,6 @@ struct SmoothieView_Previews: PreviewProvider {
                     .frame(height: 700)
             }
         }
-        .preferredColorScheme(.light)
         .environmentObject(FrutaModel())
     }
 }

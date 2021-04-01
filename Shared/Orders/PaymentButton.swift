@@ -1,7 +1,9 @@
-//
-//  PaymentButton.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A button that hosts PKPaymentButton for simulating smoothie purchases with Apple Pay.
+*/
 
 import SwiftUI
 import PassKit
@@ -11,7 +13,7 @@ struct PaymentButton: View {
     
     var height: CGFloat {
         #if os(macOS)
-        return 28
+        return 30
         #else
         return 45
         #endif
@@ -22,6 +24,7 @@ struct PaymentButton: View {
             .frame(minWidth: 100, maxWidth: 400)
             .frame(height: height)
             .frame(maxWidth: .infinity)
+            .accessibility(label: Text("Buy with Apple Pay"))
     }
 }
 
@@ -60,25 +63,26 @@ extension PaymentButton {
             context.coordinator.action = action
         }
         #endif
+    }
+    
+    class Coordinator: NSObject {
+        var action: () -> Void
+        var button = PKPaymentButton(paymentButtonType: .buy, paymentButtonStyle: .automatic)
         
-        class Coordinator: NSObject {
-            var action: () -> Void
-            var button = PKPaymentButton(paymentButtonType: .buy, paymentButtonStyle: .automatic)
-            
-            init(action: @escaping () -> Void) {
-                self.action = action
-                super.init()
-                #if os(iOS)
-                button.addTarget(self, action: #selector(callback(_:)), for: .touchUpInside)
-                #else
-                button.action = #selector(callback(_:))
-                button.target = self
-                #endif
-            }
-            
-            @objc func callback(_ sender: Any) {
-                action()
-            }
+        init(action: @escaping () -> Void) {
+            self.action = action
+            super.init()
+            #if os(iOS)
+            button.addTarget(self, action: #selector(callback(_:)), for: .touchUpInside)
+            #else
+            button.action = #selector(callback(_:))
+            button.target = self
+            #endif
+        }
+        
+        @objc
+        func callback(_ sender: Any) {
+            action()
         }
     }
 }

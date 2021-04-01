@@ -1,7 +1,9 @@
-//
-// MeasurementView.swift
-// Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view that can display an arbritrary DisplayableMeasurement
+*/
 
 import SwiftUI
 import NutritionFacts

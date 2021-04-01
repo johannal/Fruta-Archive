@@ -1,24 +1,29 @@
-//
-//  FavoriteSmoothies.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+The favorites tab or content list that includes smoothies marked as favorites.
+*/
 
 import SwiftUI
 
 struct FavoriteSmoothies: View {
     @EnvironmentObject private var model: FrutaModel
+
+    var favoriteSmooties: [Smoothie] {
+        model.favoriteSmoothieIDs.map { Smoothie(for: $0)! }
+    }
     
     var body: some View {
-        Group {
-            if model.favoriteSmoothieIDs.isEmpty {
-                Text("Add some smoothies to your favorites!")
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            } else {
-                SmoothieList(smoothies: Array(model.favoriteSmoothieIDs.map { Smoothie(for: $0)! }))
-            }
-        }
-        .navigationTitle("Favorites")
+        SmoothieList(smoothies: favoriteSmooties)
+            .overlay(Group {
+                if model.favoriteSmoothieIDs.isEmpty {
+                    Text("Add some smoothies to your favorites!")
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            })
+            .navigationTitle("Favorites")
     }
 }
 

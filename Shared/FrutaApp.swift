@@ -4,28 +4,20 @@
 //
 
 import SwiftUI
-#if !os(macOS)
-import HealthKit
-#endif
 
 @main
 struct FrutaApp: App {
+    @StateObject private var model = FrutaModel()
+    @StateObject private var store = Store()
     
-    @StateObject var dataStore = FrutaModel()
-    
-    @SceneBuilder var body: some Scene {
+    var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(dataStore)
-                .onAppear {
-                    #if os(iOS)
-                    if CommandLine.arguments.contains("-enable-healthkit") {
-                        let burnedCalories = Set([HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!])
-                        HKHealthStore().requestAuthorization(toShare: nil,
-                                                             read: burnedCalories) { _, _ in }
-                    }
-                    #endif
-            }
+                .environmentObject(model)
+                .environmentObject(store)
+        }
+        .commands {
+            SidebarCommands()
         }
     }
 }

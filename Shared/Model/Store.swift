@@ -1,19 +1,20 @@
-//
-//  Store.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A model that handles digital purchases like recipes.
+*/
 
 import StoreKit
 
 typealias FetchCompletionHandler = (([SKProduct]) -> Void)
 typealias PurchaseCompletionHandler = ((SKPaymentTransaction?) -> Void)
 
-protocol StoreRevocationDelegate: class {
-    func productIDsRevoked(productIDs: [String])
-}
+// MARK: - Store
 
-class Store: NSObject {
-    static let unlockAllRecipesIdentifier = "com.example.apple-samplecode.fruta.unlock-recipes"
+class Store: NSObject, ObservableObject {
+    @Published var unlockedAllRecipes: Bool = false
+    @Published var unlockAllRecipesProduct: SKProduct?
     
     private let allProductIdentifiers = Set([Store.unlockAllRecipesIdentifier])
     
@@ -23,14 +24,48 @@ class Store: NSObject {
     private var fetchCompletionHandler: FetchCompletionHandler?
     private var purchaseCompletionHandler: PurchaseCompletionHandler?
     
-    weak var revocationDelegate: StoreRevocationDelegate?
-    
     override init() {
         super.init()
-        // Demo snippet: startObservingPaymentQueue() should be called here instead of in FrutaModel.swift
+        // Get notified when access to a product is revoked
+        startObservingPaymentQueue()
+        fetchProducts { [weak self] products in
+            guard let self = self else { return }
+            self.unlockAllRecipesProduct = products.first(where: { $0.productIdentifier == Store.unlockAllRecipesIdentifier })
+        }
+    }
+}
+
+// MARK: - Store API
+
+extension Store {
+    static let unlockAllRecipesIdentifier = "com.example.apple-samplecode.fruta.unlock-recipes"
+    
+    func product(for identifier: String) -> SKProduct? {
+        return fetchedProducts.first(where: { $0.productIdentifier == identifier })
     }
     
-    func buy(_ product: SKProduct, completion: @escaping PurchaseCompletionHandler) {
+    func purchaseProduct(_ product: SKProduct) {
+        startObservingPaymentQueue()
+        buy(product) { [weak self] transaction in
+            guard let self = self,
+                  let transaction = transaction else {
+                return
+            }
+            
+            // If the purchase was successful and it was for the premium recipes identifiers
+            // then publish the unlock change
+            if transaction.payment.productIdentifier == Store.unlockAllRecipesIdentifier,
+               transaction.transactionState == .purchased {
+                self.unlockedAllRecipes = true
+            }
+        }
+    }
+}
+
+// MARK: - Private Logic
+
+extension Store {
+    private func buy(_ product: SKProduct, completion: @escaping PurchaseCompletionHandler) {
         // Save our completion handler for later
         purchaseCompletionHandler = completion
         
@@ -39,11 +74,11 @@ class Store: NSObject {
         SKPaymentQueue.default().add(payment)
     }
     
-    func hasPurchasedIAP(_ identifier: String) -> Bool {
-        return completedPurchases.contains(identifier)
+    private func hasPurchasedIAP(_ identifier: String) -> Bool {
+        completedPurchases.contains(identifier)
     }
     
-    func fetchProducts(_ completion: @escaping FetchCompletionHandler) {
+    private func fetchProducts(_ completion: @escaping FetchCompletionHandler) {
         guard self.productsRequest == nil else {
             return
         }
@@ -56,14 +91,12 @@ class Store: NSObject {
         productsRequest?.start()
     }
     
-    func product(for identifier: String) -> SKProduct? {
-        return fetchedProducts.first(where: { $0.productIdentifier == identifier })
-    }
-    
-    func startObservingPaymentQueue() {
+    private func startObservingPaymentQueue() {
         SKPaymentQueue.default().add(self)
     }
 }
+
+// MARK: - SKPAymentTransactionObserver
 
 extension Store: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
@@ -92,14 +125,15 @@ extension Store: SKPaymentTransactionObserver {
     
     func paymentQueue(_ queue: SKPaymentQueue, didRevokeEntitlementsForProductIdentifiers productIdentifiers: [String]) {
         completedPurchases.removeAll(where: { productIdentifiers.contains($0) })
-        if let revocationDelegate = revocationDelegate {
-            DispatchQueue.main.async {
-                revocationDelegate.productIDsRevoked(productIDs: productIdentifiers)
+        DispatchQueue.main.async {
+            if productIdentifiers.contains(Store.unlockAllRecipesIdentifier) {
+                self.unlockedAllRecipes = false
             }
         }
     }
 }
 
+// MARK: - SKProductsRequestDelegate
 
 extension Store: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {

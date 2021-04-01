@@ -1,7 +1,9 @@
-//
-//  SmoothieHeaderView.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+The view that summarizes the smoothie and adjusts its layout based on the environment and platform.
+*/
 
 import SwiftUI
 import NutritionFacts
@@ -29,12 +31,15 @@ struct SmoothieHeaderView: View {
         #endif
     }
     
-    @ViewBuilder var body: some View {
-        if horizontallyConstrained {
-            fullBleedContent
-        } else {
-            wideContent
+    var body: some View {
+        Group {
+            if horizontallyConstrained {
+                fullBleedContent
+            } else {
+                wideContent
+            }
         }
+        .accessibilityElement(children: .combine)
     }
     
     var fullBleedContent: some View {
@@ -42,6 +47,7 @@ struct SmoothieHeaderView: View {
             smoothie.image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .accessibility(hidden: true)
             
             VStack(alignment: .leading) {
                 Text(smoothie.description)
@@ -51,7 +57,7 @@ struct SmoothieHeaderView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(backgroundColor.edgesIgnoringSafeArea(.all))
+            .background(backgroundColor.ignoresSafeArea())
         }
     }
     
@@ -79,6 +85,7 @@ struct SmoothieHeaderView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 220, height: 250)
                 .clipped()
+                .accessibility(hidden: true)
         }
         .frame(height: 250)
         .clipShape(wideClipShape)

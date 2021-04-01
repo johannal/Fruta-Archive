@@ -1,11 +1,12 @@
-//
-//  RecipeView.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view that displays the recipe for a smoothie.
+*/
 
 import SwiftUI
 import NutritionFacts
-import UtilityViews
 
 struct RecipeView: View {
     var smoothie: Smoothie
@@ -22,12 +23,12 @@ struct RecipeView: View {
     
     let shape = RoundedRectangle(cornerRadius: 24, style: .continuous)
     
-    var s: String { smoothieCount == 1 ? "" : "s" }
+    var pluralizer: String { smoothieCount == 1 ? "" : "s" }
 
     var recipeToolbar: some View {
         StepperView(
             value: $smoothieCount,
-            label: "\(smoothieCount) Smoothie\(s)" ,
+            label: "\(smoothieCount) Smoothie\(pluralizer)" ,
             configuration: StepperView.Configuration(increment: 1, minValue: 1, maxValue: 9)
         )
         .frame(maxWidth: .infinity)
@@ -43,7 +44,6 @@ struct RecipeView: View {
                     .frame(maxHeight: 300)
                     .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
                     .overlay(recipeToolbar, alignment: .bottom)
-                    .padding(.horizontal)
                     
                 VStack(alignment: .leading) {
                     Text("Ingredients")
@@ -68,13 +68,16 @@ struct RecipeView: View {
                             .stroke(Color.primary.opacity(0.1), lineWidth: 1)
                     )
                 }
-                .padding()
             }
+            .padding()
             .frame(minWidth: 200, idealWidth: 400, maxWidth: 400)
             .frame(maxWidth: .infinity)
         }
-        .background(backgroundColor.edgesIgnoringSafeArea(.all))
+        .background(backgroundColor.ignoresSafeArea())
         .navigationTitle(smoothie.title)
+        .toolbar {
+            SmoothieFavoriteButton(smoothie: smoothie)
+        }
     }
 }
 
@@ -93,9 +96,7 @@ struct RecipeIngredientRow: View {
     }
     
     var body: some View {
-        Button {
-            checked.toggle()
-        } label: {
+        Button(action: { checked.toggle() }) {
             HStack {
                 ingredient.image
                     .resizable()
@@ -104,14 +105,14 @@ struct RecipeIngredientRow: View {
                     .frame(width: 60, height: 60)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
-                VStack(alignment: .leading, spacing: 4) { 
+                VStack(alignment: .leading, spacing: 4) {
                     Text(ingredient.name).font(.headline)
                     MeasurementView(measurement: measurement)
                 }
 
                 Spacer()
 
-                Toggle("Has Ingredient", isOn: $checked)
+                Toggle("Complete", isOn: $checked)
             }
             .contentShape(Rectangle())
         }
@@ -123,5 +124,7 @@ struct RecipeIngredientRow: View {
 struct RecipeView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeView(smoothie: .thatsBerryBananas)
+            .environmentObject(FrutaModel())
+            .environmentObject(Store())
     }
 }

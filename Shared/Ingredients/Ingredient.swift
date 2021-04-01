@@ -1,9 +1,9 @@
-//
-//  Ingredient.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
 
-import Foundation
+Abstract:
+A model that represents a smoothie ingredient and its appearance as a thumbnail and card.
+*/
 
 // MARK: - Ingredient
 

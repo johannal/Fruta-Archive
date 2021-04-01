@@ -1,9 +1,10 @@
-//
-//  MeasuredIngredient.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
 
-import Foundation
+Abstract:
+An ingredient with a measurement that informs its nutrition facts
+*/
+
 import SwiftUI
 import NutritionFacts
 

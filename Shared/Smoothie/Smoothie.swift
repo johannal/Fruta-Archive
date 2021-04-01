@@ -1,7 +1,9 @@
-//
-//  Smoothie.swift
-//  Fruta
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A model that represents a smoothie — including its descriptive information and ingredients (and nutrition facts).
+*/
 
 import Foundation
 import NutritionFacts
@@ -11,7 +13,6 @@ struct Smoothie: Identifiable, Codable {
     var title: String
     var description: String
     var measuredIngredients: [MeasuredIngredient]
-    var isPopularNearby = false
     var hasFreeRecipe = false
 }
 
@@ -41,13 +42,23 @@ extension Smoothie {
     }
 }
 
+extension Smoothie: Hashable {
+    static func == (lhs: Smoothie, rhs: Smoothie) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
 // MARK: - Smoothie List
 extension Smoothie {
     static let all: [Smoothie] = [
         .berryBlue,
         .carrotChops,
         .hulkingLemonade,
-        .pinaColada,
+        .crazyColada,
         .kiwiCutie,
         .lemonberry,
         .loveYouBerryMuch,
@@ -72,7 +83,6 @@ extension Smoothie {
             MeasuredIngredient(.blueberry, measurement: Measurement(value: 1, unit: .cups)),
             MeasuredIngredient(.avocado, measurement: Measurement(value: 0.2, unit: .cups))
         ],
-        isPopularNearby: true,
         hasFreeRecipe: true
     )
     
@@ -88,10 +98,10 @@ extension Smoothie {
         hasFreeRecipe: true
     )
 
-    static let pinaColada = Smoothie(
-        id: "if-you-like-pina-colada",
-        title: "If You Like Piña Colada",
-        description: "…and getting caught in the rain. This is the smoothie for you!",
+    static let crazyColada = Smoothie(
+        id: "crazy-colada",
+        title: "Crazy Colada",
+        description: "Enjoy the tropical flavors of coconut and pineapple!",
         measuredIngredients: [
             MeasuredIngredient(.pineapple, measurement: Measurement(value: 1.5, unit: .cups)),
             MeasuredIngredient(.almondMilk, measurement: Measurement(value: 1, unit: .cups)),
@@ -108,8 +118,7 @@ extension Smoothie {
             MeasuredIngredient(.spinach, measurement: Measurement(value: 1, unit: .cups)),
             MeasuredIngredient(.avocado, measurement: Measurement(value: 0.2, unit: .cups)),
             MeasuredIngredient(.water, measurement: Measurement(value: 0.2, unit: .cups))
-        ],
-        isPopularNearby: true
+        ]
     )
     
     static let kiwiCutie = Smoothie(
@@ -120,8 +129,7 @@ extension Smoothie {
             MeasuredIngredient(.kiwi, measurement: Measurement(value: 1, unit: .cups)),
             MeasuredIngredient(.orange, measurement: Measurement(value: 1, unit: .cups)),
             MeasuredIngredient(.spinach, measurement: Measurement(value: 1, unit: .cups))
-        ],
-        isPopularNearby: true
+        ]
     )
     
     static let lemonberry = Smoothie(
@@ -156,8 +164,7 @@ extension Smoothie {
             MeasuredIngredient(.mango, measurement: Measurement(value: 1, unit: .cups)),
             MeasuredIngredient(.pineapple, measurement: Measurement(value: 0.5, unit: .cups)),
             MeasuredIngredient(.water, measurement: Measurement(value: 0.5, unit: .cups))
-        ],
-        isPopularNearby: true
+        ]
     )
     
     static let oneInAMelon = Smoothie(
@@ -191,14 +198,13 @@ extension Smoothie {
             MeasuredIngredient(.banana, measurement: Measurement(value: 0.5, unit: .cups)),
             MeasuredIngredient(.chocolate, measurement: Measurement(value: 2, unit: .tablespoons)),
             MeasuredIngredient(.peanutButter, measurement: Measurement(value: 1, unit: .tablespoons))
-        ],
-        isPopularNearby: true
+        ]
     )
     
     static let sailorMan = Smoothie(
         id: "sailor-man",
         title: "Sailor Man",
-        description: "Get strong to the finich with this delicious spinach smoothie!",
+        description: "Get strong with this delicious spinach smoothie!",
         measuredIngredients: [
             MeasuredIngredient(.orange, measurement: Measurement(value: 1.5, unit: .cups)),
             MeasuredIngredient(.spinach, measurement: Measurement(value: 1, unit: .cups))
@@ -225,7 +231,6 @@ extension Smoothie {
             MeasuredIngredient(.banana, measurement: Measurement(value: 1, unit: .cups)),
             MeasuredIngredient(.strawberry, measurement: Measurement(value: 1, unit: .cups))
         ],
-        isPopularNearby: true,
         hasFreeRecipe: true
     )
     
