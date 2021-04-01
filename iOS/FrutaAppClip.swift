@@ -53,7 +53,7 @@ struct FrutaAppClip: App {
                 return
             }
             DispatchQueue.main.async {
-                model.applePayAllowed = inRegion
+                model.isApplePayEnabled = inRegion
             }
         }
     }

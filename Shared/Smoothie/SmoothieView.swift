@@ -161,7 +161,7 @@ struct SmoothieView: View {
     }
     
     func orderSmoothie() {
-        guard model.applePayAllowed else {
+        guard model.isApplePayEnabled else {
             presentingSecurityAlert = true
             return
         }

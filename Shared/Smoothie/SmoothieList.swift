@@ -23,12 +23,12 @@ struct SmoothieList: View {
                         SmoothieRow(smoothie: smoothie)
                     }
                     .tag(smoothie)
-                    .onReceive(model.$selectedSmoothieID) { newValue in
-                        // Need to make sure the Smoothie exists.
-                        guard let smoothieID = newValue, let smoothie = Smoothie(for: smoothieID) else { return }
-                        proxy.scrollTo(smoothie.id)
-                        selection = smoothie.id
-                    }
+//                    .onReceive(model.$selectedSmoothieID) { newValue in
+//                        // Need to make sure the Smoothie exists.
+//                        guard let smoothieID = newValue, let smoothie = Smoothie(for: smoothieID) else { return }
+//                        proxy.scrollTo(smoothie.id)
+//                        selection = smoothie.id
+//                    }
                 }
             }
         }
