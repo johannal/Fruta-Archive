@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The view that summarizes the smoothie and adjusts its layout based on the environment and platform.
-*/
+//
+//  SmoothieHeaderView
+//  Fruta
+//
 
 import SwiftUI
 

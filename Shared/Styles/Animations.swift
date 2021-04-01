@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Reusable animations for certain aspects of the app like opening, closing, and flipping cards.
-*/
+//
+//  Animations
+//  Fruta
+//
 
 import SwiftUI
 

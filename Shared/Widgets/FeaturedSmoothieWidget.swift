@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A widget that highlights featured smoothies.
-*/
+//
+//  FeaturedSmoothieWidget
+//  Fruta Widgets
+//
 
 import WidgetKit
 import SwiftUI

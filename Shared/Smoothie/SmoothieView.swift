@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The smoothie detail view that offers the smoothie for sale and lists its ingredients.
-*/
+//
+//  SmoothieView
+//  Fruta
+//
 
 import SwiftUI
 

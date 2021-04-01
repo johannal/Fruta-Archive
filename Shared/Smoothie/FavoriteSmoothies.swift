@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The favorites tab or content list that includes smoothies marked as favorites.
-*/
+//
+//  FavoriteSmoothies
+//  Fruta
+//
 
 import SwiftUI
 

@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A model that represents a smoothie ingredient and its appearance as a thumbnail and card.
-*/
+//
+//  Ingredient
+//  Fruta
+//
 
 // MARK: - Ingredient
 

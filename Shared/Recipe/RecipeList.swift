@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A list of unlocked smoothies' recipes, and a call to action to purchase all recipes.
-*/
+//
+//  RecipeList
+//  Fruta
+//
 
 import SwiftUI
 

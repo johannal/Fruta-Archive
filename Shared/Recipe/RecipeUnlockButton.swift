@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A button that unlocks all recipes.
-*/
+//
+//  RecipeUnlockButton
+//  Fruta
+//
 
 import SwiftUI
 import StoreKit

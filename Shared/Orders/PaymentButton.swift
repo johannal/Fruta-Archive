@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A button that hosts PKPaymentButton for simulating smoothie purchases with Apple Pay.
-*/
+//
+//  PaymentButton
+//  Fruta
+//
 
 import SwiftUI
 import PassKit

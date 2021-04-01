@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Animates newly aquired points as stamps on a card representing progress towards the next free smoothie.
-*/
+//
+//  RewardsCard
+//  Fruta
+//
 
 import SwiftUI
 

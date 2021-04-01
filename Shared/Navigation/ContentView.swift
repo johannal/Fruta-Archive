@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The primary entry point for the app's user interface. Can change between tab-based and sidebar-based navigation.
-*/
+//
+//  ContentView
+//  Fruta
+//
 
 import SwiftUI
 

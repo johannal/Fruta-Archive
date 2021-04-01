@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A card that presents an IngredientGraphic and allows it to flip over to reveal its nutritional information
-*/
+//
+//  IngredientCard
+//  Fruta
+//
 
 import SwiftUI
 

@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-An ingredient with a measurement that informs its nutrition facts
-*/
+//
+//  MeasuredIngredient
+//  Fruta
+//
 
 import SwiftUI
 

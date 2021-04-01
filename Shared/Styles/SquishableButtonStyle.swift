@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A button style that squishes its content and optionally slightly fades it out when pressed
-*/
+//
+//  SquishableButtonStyle
+//  Fruta
+//
 
 import SwiftUI
 

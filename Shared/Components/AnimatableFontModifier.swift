@@ -1,9 +1,8 @@
-/*
-See LICENSE folder for this sample’s licensing information.
+//
+//  AnimatableFontModifier
+//  Fruta
+//
 
-Abstract:
-A modifier that can animate a font's size changing over time.
-*/
 
 import SwiftUI
 

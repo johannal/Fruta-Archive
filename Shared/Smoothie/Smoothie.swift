@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A model that represents a smoothie — including its descriptive information and ingredients (and nutrition facts).
-*/
+//
+//  Smoothie
+//  Fruta
+//
 
 import Foundation
 

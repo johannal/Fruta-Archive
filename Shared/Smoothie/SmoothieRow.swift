@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A row used by SmoothieList that adjusts its layout based on environment and platform
-*/
+//
+//  SmoothieRow
+//  Fruta
+//
 
 import SwiftUI
 

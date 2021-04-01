@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A bundle of widgets for the Fruta app.
-*/
+//
+//  FrutaWidgets
+//  Fruta Widgets
+//
 
 import WidgetKit
 import SwiftUI

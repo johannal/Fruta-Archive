@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A reusable view that can display a list of arbritary smoothies.
-*/
+//
+//  SmoothieList
+//  Fruta
+//
 
 import SwiftUI
 

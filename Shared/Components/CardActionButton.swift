@@ -1,9 +1,8 @@
-/*
-See LICENSE folder for this sample’s licensing information.
+//
+//  CardActionButton
+//  Fruta
+//
 
-Abstract:
-A squishable button that has a consistent look for use on a card
-*/
 
 import SwiftUI
 

@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-An extension for the smoothie model that offers an image property for ease of use.
-*/
+//
+//  Smoothie+SwiftUI
+//  Fruta
+//
 
 import SwiftUI
 

@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A representation of an order — how many points it is worth and whether it is ready to be picked up.
-*/
+//
+//  Order
+//  Fruta
+//
 
 struct Order {
     private(set) var smoothie: Smoothie

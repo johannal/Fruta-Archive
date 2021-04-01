@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The app's navigation with a configuration that offers a sidebar, content list, and detail pane.
-*/
+//
+//  AppSidebarNavigation
+//  Fruta
+//
 
 import SwiftUI
 

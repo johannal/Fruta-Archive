@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view presented to the user once they order a smoothie, and when it's ready to be picked up.
-*/
+//
+//  OrderPlacedView
+//  Fruta
+//
 
 import SwiftUI
 import AuthenticationServices

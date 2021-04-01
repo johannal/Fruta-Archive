@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A toggle style that uses system checkmark images to represent the On state.
-*/
+//
+//  CircleToggleStyle
+//  Fruta
+//
 
 import SwiftUI
 

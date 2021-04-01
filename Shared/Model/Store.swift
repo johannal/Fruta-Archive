@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A model that handles digital purchases like recipes.
-*/
+//
+//  Store
+//  Fruta
+//
 
 import StoreKit
 

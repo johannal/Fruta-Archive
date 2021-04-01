@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A widget that displays the rewards card, showing progress towards the next free smoothie.
-*/
+//
+//  RewardsCardWidget
+//  Fruta Widgets
+//
 
 import WidgetKit
 import SwiftUI

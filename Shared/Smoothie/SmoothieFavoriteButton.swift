@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A button to favorite a smoothie, can be placed in a toolbar.
-*/
+//
+//  SmoothieFavoriteButton
+//  Fruta
+//
 
 import SwiftUI
 

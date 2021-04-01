@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view that can flip between a front and back side.
-*/
+//
+//  FlipView
+//  Fruta
+//
 
 import SwiftUI
 

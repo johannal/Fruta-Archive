@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A graphic that displays an Ingredient as a thumbnail, a card highlighting its image, or the back of a card highlighting its nutrition facts.
-*/
+//
+//  IngredientGraphic
+//  Fruta
+//
 
 import SwiftUI
 

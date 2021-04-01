@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A model representing all of the data the app needs to display in its interface.
-*/
+//
+//  FrutaModel
+//  Fruta
+//
 
 import AuthenticationServices
 

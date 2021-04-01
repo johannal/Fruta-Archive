@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A representation of a customer's account. Used for calculating free smoothie redemption.
-*/
+//
+//  Account
+//  Fruta
+//
 
 struct Account {
     var orderHistory = [Order]()

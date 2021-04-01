@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A button for either incrementing or decrementing a binding.
-*/
+//
+//  CountButton
+//  Fruta
+//
 
 import SwiftUI
 

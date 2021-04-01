@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view that offers controls that tilt the view when incrementing or decrementing a value
-*/
+//
+//  StepperView
+//  Fruta
+//
 
 import SwiftUI
 

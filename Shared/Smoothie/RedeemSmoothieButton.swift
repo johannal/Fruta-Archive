@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A button for redeeming free smoothies.
-*/
+//
+//  RedeemSmoothieButton
+//  Fruta
+//
 
 import SwiftUI
 

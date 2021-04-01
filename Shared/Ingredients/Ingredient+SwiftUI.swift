@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Definition of how the ingredients should appear in their thumbnail and card appearances.
-*/
+//
+//  Ingredient+SwiftUI
+//  Fruta
+//
 
 import SwiftUI
 

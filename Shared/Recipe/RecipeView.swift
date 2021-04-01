@@ -1,9 +1,7 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view that displays the recipe for a smoothie.
-*/
+//
+//  RecipeView
+//  Fruta
+//
 
 import SwiftUI
 
