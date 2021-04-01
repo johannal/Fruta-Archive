@@ -1,0 +1,40 @@
+{
+  "configurations" : [
+    {
+      "id" : "895FA549-138D-4A4B-B125-299A6D18638D",
+      "name" : "Configuration 1",
+      "options" : {
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:Fruta.xcodeproj",
+          "identifier" : "5E612403244E8B32004DDFF7",
+          "name" : "Fruta iOS"
+        }
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Fruta.xcodeproj",
+      "identifier" : "5E612403244E8B32004DDFF7",
+      "name" : "Fruta iOS"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Fruta.xcodeproj",
+        "identifier" : "040B683E24786C5400899813",
+        "name" : "Fruta Unit Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Fruta.xcodeproj",
+        "identifier" : "80B38FE5247DD0F9008F5BEE",
+        "name" : "Fruita iOS UI Tests"
+      }
+    }
+  ],
+  "version" : 1
+}

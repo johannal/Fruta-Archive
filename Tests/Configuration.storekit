@@ -1,0 +1,74 @@
+{
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : true,
+      "internalID" : "107973A4",
+      "localizations" : [
+        {
+          "description" : "Make smoothies at home!",
+          "displayName" : "Unlock All Recipes",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.example.apple-samplecode.fruta.unlock-recipes",
+      "referenceName" : "Unlock All Recipes",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "71D1CE6B",
+      "localizations" : [
+        {
+          "description" : "Access the recipe for the Berry Blue smoothie",
+          "displayName" : "Berry Blue Recipe",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.example.apple-samplecode.fruta.unlock-recipe.berry-blue",
+      "referenceName" : "Berry Blue Recipe",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "E6ACC98D",
+      "localizations" : [
+        {
+          "description" : "Access the Carrot Chops smoothie recipe",
+          "displayName" : "Carrot Chops Recipe",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.example.apple-samplecode.fruta.unlock-recipe.carrot-chops",
+      "referenceName" : "Carrot Chops Recipe",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "66A327D0",
+      "localizations" : [
+        {
+          "description" : "Access to the Berry Bananas smoothie recipe",
+          "displayName" : "Berry Bananas Recipe",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.example.apple-samplecode.fruta.unlock-recipe.berry-bananas",
+      "referenceName" : "Berry Bananas Recipe",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 0
+  }
+}
