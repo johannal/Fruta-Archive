@@ -6,7 +6,6 @@ An ingredient with a measurement that informs its nutrition facts
 */
 
 import SwiftUI
-import NutritionFacts
 
 struct MeasuredIngredient: Identifiable, Codable {
     var ingredient: Ingredient

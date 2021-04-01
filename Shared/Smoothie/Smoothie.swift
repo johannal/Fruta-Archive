@@ -6,7 +6,6 @@ A model that represents a smoothie — including its descriptive information and
 */
 
 import Foundation
-import NutritionFacts
 
 struct Smoothie: Identifiable, Codable {
     var id: String

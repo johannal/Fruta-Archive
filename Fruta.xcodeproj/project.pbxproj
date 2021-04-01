@@ -93,12 +93,30 @@
 		610F545C26158073001D3AA0 /* CircleToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D126157D870046AAA9 /* CircleToggleStyle.swift */; };
 		610F545D26158073001D3AA0 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D226157D870046AAA9 /* Animations.swift */; };
 		610F545E26158073001D3AA0 /* SquishableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D326157D870046AAA9 /* SquishableButtonStyle.swift */; };
-		610F545F26158076001D3AA0 /* FrutaWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D726157D870046AAA9 /* FrutaWidgets.swift */; };
-		610F546026158076001D3AA0 /* RewardsCardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D526157D870046AAA9 /* RewardsCardWidget.swift */; };
-		610F546126158076001D3AA0 /* FeaturedSmoothieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D626157D870046AAA9 /* FeaturedSmoothieWidget.swift */; };
-		610F546226158076001D3AA0 /* FrutaWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D726157D870046AAA9 /* FrutaWidgets.swift */; };
-		610F546326158076001D3AA0 /* RewardsCardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D526157D870046AAA9 /* RewardsCardWidget.swift */; };
-		610F546426158076001D3AA0 /* FeaturedSmoothieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D626157D870046AAA9 /* FeaturedSmoothieWidget.swift */; };
+		610F54762615818D001D3AA0 /* NutritionFactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54662615818D001D3AA0 /* NutritionFactView.swift */; };
+		610F54772615818D001D3AA0 /* NutritionFactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54662615818D001D3AA0 /* NutritionFactView.swift */; };
+		610F54782615818D001D3AA0 /* NutritionFact+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54672615818D001D3AA0 /* NutritionFact+Decodable.swift */; };
+		610F54792615818D001D3AA0 /* NutritionFact+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54672615818D001D3AA0 /* NutritionFact+Decodable.swift */; };
+		610F547A2615818D001D3AA0 /* NutritionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54682615818D001D3AA0 /* NutritionRow.swift */; };
+		610F547B2615818D001D3AA0 /* NutritionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54682615818D001D3AA0 /* NutritionRow.swift */; };
+		610F547C2615818D001D3AA0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 610F546A2615818D001D3AA0 /* Localizable.strings */; };
+		610F547D2615818D001D3AA0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 610F546A2615818D001D3AA0 /* Localizable.strings */; };
+		610F547E2615818D001D3AA0 /* NutritionalItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 610F546C2615818D001D3AA0 /* NutritionalItems.json */; };
+		610F547F2615818D001D3AA0 /* NutritionalItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 610F546C2615818D001D3AA0 /* NutritionalItems.json */; };
+		610F54802615818D001D3AA0 /* NutritionFactsAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 610F546E2615818D001D3AA0 /* NutritionFactsAssets.xcassets */; };
+		610F54812615818D001D3AA0 /* NutritionFactsAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 610F546E2615818D001D3AA0 /* NutritionFactsAssets.xcassets */; };
+		610F54822615818D001D3AA0 /* NutritionFact+Energy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54702615818D001D3AA0 /* NutritionFact+Energy.swift */; };
+		610F54832615818D001D3AA0 /* NutritionFact+Energy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54702615818D001D3AA0 /* NutritionFact+Energy.swift */; };
+		610F54842615818D001D3AA0 /* CalorieCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54712615818D001D3AA0 /* CalorieCountView.swift */; };
+		610F54852615818D001D3AA0 /* CalorieCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54712615818D001D3AA0 /* CalorieCountView.swift */; };
+		610F54862615818D001D3AA0 /* Nutritions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54722615818D001D3AA0 /* Nutritions.swift */; };
+		610F54872615818D001D3AA0 /* Nutritions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54722615818D001D3AA0 /* Nutritions.swift */; };
+		610F54882615818D001D3AA0 /* NutritionFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54732615818D001D3AA0 /* NutritionFact.swift */; };
+		610F54892615818D001D3AA0 /* NutritionFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54732615818D001D3AA0 /* NutritionFact.swift */; };
+		610F548A2615818D001D3AA0 /* UnitIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54742615818D001D3AA0 /* UnitIcons.swift */; };
+		610F548B2615818D001D3AA0 /* UnitIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54742615818D001D3AA0 /* UnitIcons.swift */; };
+		610F548C2615818D001D3AA0 /* DisplayableMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54752615818D001D3AA0 /* DisplayableMeasurement.swift */; };
+		610F548D2615818D001D3AA0 /* DisplayableMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F54752615818D001D3AA0 /* DisplayableMeasurement.swift */; };
 		611716C82469DF41000FFDD9 /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611716C72469DF41000FFDD9 /* AppTabNavigation.swift */; };
 		619A41CA2466033D00C6C4CC /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A41C82466033A00C6C4CC /* VisualEffectView.swift */; };
 /* End PBXBuildFile section */
@@ -135,6 +153,20 @@
 		5E61240F244E8B32004DDFF7 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		5EBA05C72463AD9F003B66CF /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		5ED308222460CD38000B64A7 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		610F54662615818D001D3AA0 /* NutritionFactView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionFactView.swift; sourceTree = "<group>"; };
+		610F54672615818D001D3AA0 /* NutritionFact+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NutritionFact+Decodable.swift"; sourceTree = "<group>"; };
+		610F54682615818D001D3AA0 /* NutritionRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionRow.swift; sourceTree = "<group>"; };
+		610F546B2615818D001D3AA0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		610F546C2615818D001D3AA0 /* NutritionalItems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NutritionalItems.json; sourceTree = "<group>"; };
+		610F546D2615818D001D3AA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		610F546E2615818D001D3AA0 /* NutritionFactsAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NutritionFactsAssets.xcassets; sourceTree = "<group>"; };
+		610F546F2615818D001D3AA0 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		610F54702615818D001D3AA0 /* NutritionFact+Energy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NutritionFact+Energy.swift"; sourceTree = "<group>"; };
+		610F54712615818D001D3AA0 /* CalorieCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieCountView.swift; sourceTree = "<group>"; };
+		610F54722615818D001D3AA0 /* Nutritions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutritions.swift; sourceTree = "<group>"; };
+		610F54732615818D001D3AA0 /* NutritionFact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionFact.swift; sourceTree = "<group>"; };
+		610F54742615818D001D3AA0 /* UnitIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitIcons.swift; sourceTree = "<group>"; };
+		610F54752615818D001D3AA0 /* DisplayableMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayableMeasurement.swift; sourceTree = "<group>"; };
 		6111A1C426157D870046AAA9 /* RewardsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsCard.swift; sourceTree = "<group>"; };
 		6111A1C526157D870046AAA9 /* OrderPlacedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPlacedView.swift; sourceTree = "<group>"; };
 		6111A1C626157D870046AAA9 /* RewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsView.swift; sourceTree = "<group>"; };
@@ -223,6 +255,7 @@
 				6111A1E726157D870046AAA9 /* Ingredients */,
 				6111A1E126157D870046AAA9 /* Model */,
 				6111A1DE26157D870046AAA9 /* Navigation */,
+				610F54652615818D001D3AA0 /* NutritionFacts */,
 				6111A1C326157D870046AAA9 /* Orders */,
 				6111A1D826157D870046AAA9 /* Recipe */,
 				6111A1ED26157D870046AAA9 /* Smoothie */,
@@ -260,6 +293,33 @@
 				619A41C82466033A00C6C4CC /* VisualEffectView.swift */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		610F54652615818D001D3AA0 /* NutritionFacts */ = {
+			isa = PBXGroup;
+			children = (
+				610F54662615818D001D3AA0 /* NutritionFactView.swift */,
+				610F54672615818D001D3AA0 /* NutritionFact+Decodable.swift */,
+				610F54682615818D001D3AA0 /* NutritionRow.swift */,
+				610F54692615818D001D3AA0 /* Resources */,
+				610F54702615818D001D3AA0 /* NutritionFact+Energy.swift */,
+				610F54712615818D001D3AA0 /* CalorieCountView.swift */,
+				610F54722615818D001D3AA0 /* Nutritions.swift */,
+				610F54732615818D001D3AA0 /* NutritionFact.swift */,
+				610F54742615818D001D3AA0 /* UnitIcons.swift */,
+				610F54752615818D001D3AA0 /* DisplayableMeasurement.swift */,
+			);
+			path = NutritionFacts;
+			sourceTree = "<group>";
+		};
+		610F54692615818D001D3AA0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				610F546A2615818D001D3AA0 /* Localizable.strings */,
+				610F546C2615818D001D3AA0 /* NutritionalItems.json */,
+				610F546E2615818D001D3AA0 /* NutritionFactsAssets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		6111A1C326157D870046AAA9 /* Orders */ = {
@@ -437,6 +497,8 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				pt,
 			);
 			mainGroup = 5E6123F7244E8B32004DDFF7;
 			packageReferences = (
@@ -457,6 +519,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E612414244E8B32004DDFF7 /* Assets.xcassets in Resources */,
+				610F547C2615818D001D3AA0 /* Localizable.strings in Resources */,
+				610F54802615818D001D3AA0 /* NutritionFactsAssets.xcassets in Resources */,
+				610F547E2615818D001D3AA0 /* NutritionalItems.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +530,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E612415244E8B32004DDFF7 /* Assets.xcassets in Resources */,
+				610F547D2615818D001D3AA0 /* Localizable.strings in Resources */,
+				610F54812615818D001D3AA0 /* NutritionFactsAssets.xcassets in Resources */,
+				610F547F2615818D001D3AA0 /* NutritionalItems.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +549,8 @@
 				610F543026158068001D3AA0 /* ContentView.swift in Sources */,
 				610F542126158061001D3AA0 /* Ingredient.swift in Sources */,
 				5ED308232460CD38000B64A7 /* VisualEffectView.swift in Sources */,
+				610F54862615818D001D3AA0 /* Nutritions.swift in Sources */,
+				610F54882615818D001D3AA0 /* NutritionFact.swift in Sources */,
 				610F543B2615806E001D3AA0 /* RecipeView.swift in Sources */,
 				610F543F2615806E001D3AA0 /* RecipeList.swift in Sources */,
 				610F544526158071001D3AA0 /* SmoothieList.swift in Sources */,
@@ -491,17 +561,21 @@
 				610F544B26158071001D3AA0 /* SmoothieFavoriteButton.swift in Sources */,
 				610F542926158066001D3AA0 /* Account.swift in Sources */,
 				610F54142615805E001D3AA0 /* StepperView.swift in Sources */,
-				610F546026158076001D3AA0 /* RewardsCardWidget.swift in Sources */,
+				610F54782615818D001D3AA0 /* NutritionFact+Decodable.swift in Sources */,
 				610F542826158066001D3AA0 /* Order.swift in Sources */,
 				610F543C2615806E001D3AA0 /* MeasurementView.swift in Sources */,
 				610F544626158071001D3AA0 /* Smoothie+SwiftUI.swift in Sources */,
 				610F542F26158068001D3AA0 /* AppSidebarNavigation.swift in Sources */,
-				610F546126158076001D3AA0 /* FeaturedSmoothieWidget.swift in Sources */,
+				610F548A2615818D001D3AA0 /* UnitIcons.swift in Sources */,
 				610F545A26158073001D3AA0 /* Animations.swift in Sources */,
 				610F54362615806B001D3AA0 /* RewardsCard.swift in Sources */,
 				610F544926158071001D3AA0 /* RedeemSmoothieButton.swift in Sources */,
 				610F545926158073001D3AA0 /* CircleToggleStyle.swift in Sources */,
+				610F54842615818D001D3AA0 /* CalorieCountView.swift in Sources */,
 				610F544D26158071001D3AA0 /* SmoothieMenu.swift in Sources */,
+				610F547A2615818D001D3AA0 /* NutritionRow.swift in Sources */,
+				610F548C2615818D001D3AA0 /* DisplayableMeasurement.swift in Sources */,
+				610F54762615818D001D3AA0 /* NutritionFactView.swift in Sources */,
 				610F54152615805E001D3AA0 /* FlipView.swift in Sources */,
 				610F540F2615805E001D3AA0 /* BubbleView.swift in Sources */,
 				610F541D26158061001D3AA0 /* IngredientGraphic.swift in Sources */,
@@ -515,9 +589,9 @@
 				610F544E26158071001D3AA0 /* Smoothie.swift in Sources */,
 				610F54342615806B001D3AA0 /* RewardsView.swift in Sources */,
 				610F541F26158061001D3AA0 /* Ingredient+NutritionFacts.swift in Sources */,
-				610F545F26158076001D3AA0 /* FrutaWidgets.swift in Sources */,
 				610F541E26158061001D3AA0 /* IngredientCard.swift in Sources */,
 				610F542726158066001D3AA0 /* FrutaModel.swift in Sources */,
+				610F54822615818D001D3AA0 /* NutritionFact+Energy.swift in Sources */,
 				610F544726158071001D3AA0 /* SmoothieRow.swift in Sources */,
 				610F545B26158073001D3AA0 /* SquishableButtonStyle.swift in Sources */,
 				610F54112615805E001D3AA0 /* AnimatableFontModifier.swift in Sources */,
@@ -534,6 +608,8 @@
 				610F543226158069001D3AA0 /* ContentView.swift in Sources */,
 				610F542626158062001D3AA0 /* Ingredient.swift in Sources */,
 				619A41CA2466033D00C6C4CC /* VisualEffectView.swift in Sources */,
+				610F54872615818D001D3AA0 /* Nutritions.swift in Sources */,
+				610F54892615818D001D3AA0 /* NutritionFact.swift in Sources */,
 				610F54402615806E001D3AA0 /* RecipeView.swift in Sources */,
 				610F54442615806E001D3AA0 /* RecipeList.swift in Sources */,
 				610F544F26158071001D3AA0 /* SmoothieList.swift in Sources */,
@@ -544,17 +620,21 @@
 				610F545526158071001D3AA0 /* SmoothieFavoriteButton.swift in Sources */,
 				610F542D26158066001D3AA0 /* Account.swift in Sources */,
 				610F541B2615805E001D3AA0 /* StepperView.swift in Sources */,
-				610F546326158076001D3AA0 /* RewardsCardWidget.swift in Sources */,
+				610F54792615818D001D3AA0 /* NutritionFact+Decodable.swift in Sources */,
 				610F542C26158066001D3AA0 /* Order.swift in Sources */,
 				610F54412615806E001D3AA0 /* MeasurementView.swift in Sources */,
 				610F545026158071001D3AA0 /* Smoothie+SwiftUI.swift in Sources */,
 				610F543126158069001D3AA0 /* AppSidebarNavigation.swift in Sources */,
-				610F546426158076001D3AA0 /* FeaturedSmoothieWidget.swift in Sources */,
+				610F548B2615818D001D3AA0 /* UnitIcons.swift in Sources */,
 				610F545D26158073001D3AA0 /* Animations.swift in Sources */,
 				610F543A2615806B001D3AA0 /* RewardsCard.swift in Sources */,
 				610F545326158071001D3AA0 /* RedeemSmoothieButton.swift in Sources */,
 				610F545C26158073001D3AA0 /* CircleToggleStyle.swift in Sources */,
+				610F54852615818D001D3AA0 /* CalorieCountView.swift in Sources */,
 				610F545726158071001D3AA0 /* SmoothieMenu.swift in Sources */,
+				610F547B2615818D001D3AA0 /* NutritionRow.swift in Sources */,
+				610F548D2615818D001D3AA0 /* DisplayableMeasurement.swift in Sources */,
+				610F54772615818D001D3AA0 /* NutritionFactView.swift in Sources */,
 				610F541C2615805E001D3AA0 /* FlipView.swift in Sources */,
 				610F54162615805E001D3AA0 /* BubbleView.swift in Sources */,
 				610F542226158062001D3AA0 /* IngredientGraphic.swift in Sources */,
@@ -568,9 +648,9 @@
 				610F545826158071001D3AA0 /* Smoothie.swift in Sources */,
 				610F54382615806B001D3AA0 /* RewardsView.swift in Sources */,
 				610F542426158062001D3AA0 /* Ingredient+NutritionFacts.swift in Sources */,
-				610F546226158076001D3AA0 /* FrutaWidgets.swift in Sources */,
 				610F542326158062001D3AA0 /* IngredientCard.swift in Sources */,
 				610F542B26158066001D3AA0 /* FrutaModel.swift in Sources */,
+				610F54832615818D001D3AA0 /* NutritionFact+Energy.swift in Sources */,
 				610F545126158071001D3AA0 /* SmoothieRow.swift in Sources */,
 				610F545E26158073001D3AA0 /* SquishableButtonStyle.swift in Sources */,
 				610F54182615805E001D3AA0 /* AnimatableFontModifier.swift in Sources */,
@@ -585,6 +665,19 @@
 			productRef = 9E538118248336BD00ABDF87 /* NutritionFacts */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		610F546A2615818D001D3AA0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				610F546B2615818D001D3AA0 /* de */,
+				610F546D2615818D001D3AA0 /* en */,
+				610F546F2615818D001D3AA0 /* pt */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5E612416244E8B32004DDFF7 /* Debug */ = {

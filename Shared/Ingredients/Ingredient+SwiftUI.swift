@@ -46,7 +46,7 @@ extension Ingredient {
         id: "avocado",
         name: "Avocado",
         title: CardTitle(
-            color: Color("brown"),
+            color: .brown,
             offset: CGSize(width: 0, height: 20),
             blendMode: .plusDarker,
             opacity: 0.4,
@@ -106,7 +106,7 @@ extension Ingredient {
         id: "chocolate",
         name: "Chocolate",
         title: CardTitle(
-            color: Color("brown"),
+            color: .brown,
             rotation: Angle.degrees(-11),
             offset: CGSize(width: 0, height: 10),
             blendMode: .plusDarker,
@@ -120,7 +120,7 @@ extension Ingredient {
         id: "coconut",
         name: "Coconut",
         title: CardTitle(
-            color: Color("brown"),
+            color: .brown,
             offset: CGSize(width: 40, height: 110),
             blendMode: .plusDarker,
             opacity: 0.8,

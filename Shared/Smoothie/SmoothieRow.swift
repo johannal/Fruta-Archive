@@ -6,7 +6,6 @@ A row used by SmoothieList that adjusts its layout based on environment and plat
 */
 
 import SwiftUI
-import NutritionFacts
 
 struct SmoothieRow: View {
     var smoothie: Smoothie
