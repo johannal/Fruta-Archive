@@ -1786,6 +1786,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.fruta-extended";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "EXTENDED DEBUG";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1811,6 +1812,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.fruta-extended";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = EXTENDED;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1839,6 +1841,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.fruta-extended";
 				PRODUCT_NAME = Fruta;
 				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG EXTENDED";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1865,6 +1868,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.fruta-extended";
 				PRODUCT_NAME = Fruta;
 				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = EXTENDED;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1892,6 +1896,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG EXTENDED";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1920,6 +1925,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = EXTENDED;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1954,6 +1960,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG EXTENDED";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1986,6 +1993,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = EXTENDED;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -2018,6 +2026,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.fruta-extended.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG EXTENDED APPCLIP";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2051,6 +2060,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.fruta-extended.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "APPCLIP EXTENDED";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

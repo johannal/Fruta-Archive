@@ -26,10 +26,17 @@ struct OrderPlacedView: View {
         return !model.hasAccount
     }
     
+    @ViewBuilder
     var signUpButton: some View {
+        #if EXTENDED
         SignInWithAppleButton(.signUp, onRequest: { _ in }, onCompletion: model.authorizeUser)
             .frame(minWidth: 100, maxWidth: 400)
             .padding(.horizontal, 20)
+        #else
+        Button(action: {}) {
+            Text("Sign Up")
+        }
+        #endif
     }
     
 /// - Tag: ActiveCompilationConditionTag

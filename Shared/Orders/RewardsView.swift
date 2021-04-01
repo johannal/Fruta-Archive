@@ -11,10 +11,17 @@ import AuthenticationServices
 struct RewardsView: View {
     @EnvironmentObject private var model: FrutaModel
     
+    @ViewBuilder
     var signUpButton: some View {
+        #if EXTENDED
         SignInWithAppleButton(.signUp, onRequest: { _ in }, onCompletion: model.authorizeUser)
             .frame(minWidth: 100, maxWidth: 400)
             .padding(.horizontal, 20)
+        #else
+        Button(action: {}) {
+            Text("Sign Up")
+        }
+        #endif
     }
     
     var body: some View {

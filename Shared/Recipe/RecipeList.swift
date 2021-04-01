@@ -32,7 +32,9 @@ struct RecipeList: View {
         #endif
     }
     
+    @ViewBuilder
     var unlockButton: some View {
+        #if EXTENDED
         Group {
             if !model.allRecipesUnlocked {
                 if let product = model.unlockAllRecipesProduct {
@@ -46,6 +48,7 @@ struct RecipeList: View {
         .scaleEffect(model.allRecipesUnlocked ? 0.8 : 1)
         .offset(y: model.allRecipesUnlocked ? cardOffscreenOffset : 0)
         .clipped()
+        #endif
     }
     
     var body: some View {
