@@ -342,8 +342,8 @@
 		5E54A226247637DB00D0339C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5E55F46B2463944E00FFE9FD /* FrutaModel.swift */,
 				5E54A227247637F700D0339C /* Account.swift */,
+				5E55F46B2463944E00FFE9FD /* FrutaModel.swift */,
 				5E54A22A2476381100D0339C /* Order.swift */,
 			);
 			path = Model;
@@ -375,17 +375,17 @@
 		5E6123FC244E8B32004DDFF7 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				5E6123FD244E8B32004DDFF7 /* FrutaApp.swift */,
-				5E6123FE244E8B32004DDFF7 /* Preview Assets.xcassets */,
 				5E6123FF244E8B32004DDFF7 /* Assets.xcassets */,
-				5E54A226247637DB00D0339C /* Model */,
-				61EDFDC6246B62180047702A /* Orders */,
-				611716CC2469E22C000FFDD9 /* Navigation */,
-				6150C3522469A9F00011D3D9 /* Smoothie */,
-				618209FD2479EF5300D9C5DB /* Recipe */,
+				5E6123FD244E8B32004DDFF7 /* FrutaApp.swift */,
 				6150C3532469A9F70011D3D9 /* Ingredients */,
-				5E9FBFA02474A31E00468580 /* Styles */,
+				5E54A226247637DB00D0339C /* Model */,
+				611716CC2469E22C000FFDD9 /* Navigation */,
+				61EDFDC6246B62180047702A /* Orders */,
+				5E6123FE244E8B32004DDFF7 /* Preview Assets.xcassets */,
+				618209FD2479EF5300D9C5DB /* Recipe */,
+				6150C3522469A9F00011D3D9 /* Smoothie */,
 				040B6839247869EF00899813 /* StoreKit */,
+				5E9FBFA02474A31E00468580 /* Styles */,
 				5E54A22D2476456400D0339C /* Supporting Files */,
 			);
 			path = Shared;
@@ -437,8 +437,8 @@
 		611716CC2469E22C000FFDD9 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				611716C42469DDB6000FFDD9 /* ContentView.swift */,
 				611716C92469DF94000FFDD9 /* AppSidebarNavigation.swift */,
+				611716C42469DDB6000FFDD9 /* ContentView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -446,14 +446,14 @@
 		6150C3522469A9F00011D3D9 /* Smoothie */ = {
 			isa = PBXGroup;
 			children = (
+				61EDFDC3246B60000047702A /* FavoriteSmoothies.swift */,
 				5E607C53244EA92800A1CD41 /* Smoothie.swift */,
 				613B6673248463C00030791E /* Smoothie+SwiftUI.swift */,
-				5EDEB2452457A75E00322737 /* SmoothieMenu.swift */,
-				61EDFDC3246B60000047702A /* FavoriteSmoothies.swift */,
-				5EDEB2472457B90800322737 /* SmoothieView.swift */,
 				61EFA1492483202200563107 /* SmoothieHeaderView.swift */,
 				61EDFDC0246B5EA10047702A /* SmoothieList.swift */,
+				5EDEB2452457A75E00322737 /* SmoothieMenu.swift */,
 				E67B41E6247891C500EE5454 /* SmoothieRowView.swift */,
+				5EDEB2472457B90800322737 /* SmoothieView.swift */,
 			);
 			path = Smoothie;
 			sourceTree = "<group>";
@@ -472,11 +472,11 @@
 		618209FD2479EF5300D9C5DB /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
+				9EADF17E247E466A00BA0BC7 /* MeasuredIngredient.swift */,
+				9EADF17B247E43CF00BA0BC7 /* MeasurementView.swift */,
 				043D6534247A28EB00C62EB3 /* RecipeList.swift */,
 				61820A012479EF7300D9C5DB /* RecipeUnlockButton.swift */,
 				5E1AC2AD247B271100C63DCF /* RecipeView.swift */,
-				9EADF17B247E43CF00BA0BC7 /* MeasurementView.swift */,
-				9EADF17E247E466A00BA0BC7 /* MeasuredIngredient.swift */,
 				E69D57A6247C724900CF3385 /* StepperView.swift */,
 			);
 			path = Recipe;
@@ -486,8 +486,8 @@
 			isa = PBXGroup;
 			children = (
 				5E5CD8C42460E051006B3BFD /* OrderPlacedView.swift */,
-				5E5CD8C724613B3A006B3BFD /* RewardsView.swift */,
 				6192DDA6245BE56F0053916E /* PaymentButton.swift */,
+				5E5CD8C724613B3A006B3BFD /* RewardsView.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
