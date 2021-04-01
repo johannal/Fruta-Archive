@@ -6,7 +6,6 @@ A view that displays the recipe for a smoothie.
 */
 
 import SwiftUI
-import NutritionFacts
 
 struct RecipeView: View {
     var smoothie: Smoothie

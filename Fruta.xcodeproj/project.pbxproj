@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E1AC2B6247B899200C63DCF /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 040B683A24786A0A00899813 /* Configuration.storekit */; };
 		5E612410244E8B32004DDFF7 /* FrutaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6123FD244E8B32004DDFF7 /* FrutaApp.swift */; };
 		5E612411244E8B32004DDFF7 /* FrutaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6123FD244E8B32004DDFF7 /* FrutaApp.swift */; };
 		5E612414244E8B32004DDFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6123FF244E8B32004DDFF7 /* Assets.xcassets */; };
@@ -102,7 +101,6 @@
 		610F546426158076001D3AA0 /* FeaturedSmoothieWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6111A1D626157D870046AAA9 /* FeaturedSmoothieWidget.swift */; };
 		611716C82469DF41000FFDD9 /* AppTabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611716C72469DF41000FFDD9 /* AppTabNavigation.swift */; };
 		619A41CA2466033D00C6C4CC /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619A41C82466033A00C6C4CC /* VisualEffectView.swift */; };
-		9ED9EC3B24821A0200076765 /* NutritionFacts in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED9EC3A24821A0200076765 /* NutritionFacts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,18 +127,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		040B683A24786A0A00899813 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
-		040B684324786C5400899813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		040B684D2478876300899813 /* InAppPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchases.swift; sourceTree = "<group>"; };
-		040B685D247887F300899813 /* iOS Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "iOS Tests.xctestplan"; sourceTree = "<group>"; };
-		5E1AC2B3247B462A00C63DCF /* CountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountButton.swift; sourceTree = "<group>"; };
 		5E6123FD244E8B32004DDFF7 /* FrutaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrutaApp.swift; sourceTree = "<group>"; };
 		5E6123FF244E8B32004DDFF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E612404244E8B32004DDFF7 /* Fruta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E61240C244E8B32004DDFF7 /* Fruta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E61240E244E8B32004DDFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E61240F244E8B32004DDFF7 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		5E9FBFA12474A33800468580 /* SquishableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquishableButtonStyle.swift; sourceTree = "<group>"; };
 		5EBA05C72463AD9F003B66CF /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		5ED308222460CD38000B64A7 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		6111A1C426157D870046AAA9 /* RewardsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsCard.swift; sourceTree = "<group>"; };
@@ -190,42 +182,7 @@
 		611716C72469DF41000FFDD9 /* AppTabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigation.swift; sourceTree = "<group>"; };
 		613B66762484659C0030791E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Shared/README.md; sourceTree = "<group>"; };
 		619A41C82466033A00C6C4CC /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
-		6D82FA26247D741900AC9E13 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
-		7F83EDA42481924A0011A00A /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		7FC1AA3A24832F0200A6CF1F /* Fruta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fruta.entitlements; sourceTree = "<group>"; };
-		7FC1AA3B24832F0300A6CF1F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
-		7FD7CAA82485B0E5006C83C3 /* Fruta iOS UI Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fruta iOS UI Tests-Bridging-Header.h"; sourceTree = "<group>"; };
-		7FD7CAAC2485BC2E006C83C3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		7FDCBE8C2480808C005D7FDE /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		7FDCBE8E248080B0005D7FDE /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
-		7FDCBE91248080C8005D7FDE /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		7FDCBE932480821D005D7FDE /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
-		80044C01247ED006008F2484 /* ScrollingPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingPerformance.swift; sourceTree = "<group>"; };
-		80057420247F05F900087158 /* AppLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunch.swift; sourceTree = "<group>"; };
-		80057422247F05FA00087158 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		80057428247F064A00087158 /* TouchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBar.swift; sourceTree = "<group>"; };
-		8005742A247F065A00087158 /* FullScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreen.swift; sourceTree = "<group>"; };
-		8017D0232480288F0058786C /* ProtectedResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectedResources.swift; sourceTree = "<group>"; };
-		8017D02524802DF90058786C /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
-		8017D02724802E060058786C /* Rewards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rewards.swift; sourceTree = "<group>"; };
-		8017D02924802E1D0058786C /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		80B38FE8247DD0F9008F5BEE /* AppLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunch.swift; sourceTree = "<group>"; };
-		80B38FEA247DD0F9008F5BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		80B38FFE247DD201008F5BEE /* macOS Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "macOS Tests.xctestplan"; sourceTree = "<group>"; };
-		80B39008247DD845008F5BEE /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		80C85E332481C42600E1BFF3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		80C85E352481C44A00E1BFF3 /* Calories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calories.swift; sourceTree = "<group>"; };
-		80C85E372481C45900E1BFF3 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
-		9E53811424832AC000ABDF87 /* FlipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
-		9E9CCAA0247F5F600010BD89 /* UtilityViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityViews.h; sourceTree = "<group>"; };
-		9E9CCAA1247F5F600010BD89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9E9CCAB4247F6B430010BD89 /* SmoothieLab.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SmoothieLab.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		9ED9EC37248219E100076765 /* NutritionFacts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = NutritionFacts; sourceTree = "<group>"; };
-		9EEF19812484229500F5365E /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
-		E69D57A3247C702C00CF3385 /* CircleToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleToggleStyle.swift; sourceTree = "<group>"; };
-		E6D988E2247A3A7C00FBD32D /* CardActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardActionButton.swift; sourceTree = "<group>"; };
-		FAA573B2247E1D02009E7AA8 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		FAA573B6247E254C009E7AA8 /* SystemAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,26 +197,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ED9EC3B24821A0200076765 /* NutritionFacts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		040B684024786C5400899813 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				040B683A24786A0A00899813 /* Configuration.storekit */,
-				040B685D247887F300899813 /* iOS Tests.xctestplan */,
-				80B38FFE247DD201008F5BEE /* macOS Tests.xctestplan */,
-				80B38FDF247DD047008F5BEE /* Unit Tests */,
-				80B38FE0247DD04F008F5BEE /* iOS UI Tests */,
-				80044C00247ECEE8008F2484 /* macOS UI Tests */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		5E6123F7244E8B32004DDFF7 = {
 			isa = PBXGroup;
 			children = (
@@ -267,12 +210,7 @@
 				5E6123FC244E8B32004DDFF7 /* Shared */,
 				5E612406244E8B32004DDFF7 /* iOS */,
 				5E61240D244E8B32004DDFF7 /* macOS */,
-				9E9CCA9F247F5F600010BD89 /* UtilityViews */,
-				040B684024786C5400899813 /* Tests */,
-				9ED9EC36248219D400076765 /* Packages */,
-				9E9CCAB1247F5F910010BD89 /* Playgrounds */,
 				5E612405244E8B32004DDFF7 /* Products */,
-				9E93A645247B8B240057344F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -431,133 +369,6 @@
 			path = Smoothie;
 			sourceTree = "<group>";
 		};
-		7FDCBE9524808228005D7FDE /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				7FDCBE8C2480808C005D7FDE /* Fetcher.swift */,
-				7FDCBE8E248080B0005D7FDE /* Codable.swift */,
-				7FDCBE91248080C8005D7FDE /* Validation.swift */,
-				FAA573B2247E1D02009E7AA8 /* Helpers.swift */,
-				7F83EDA42481924A0011A00A /* Factory.swift */,
-				7FDCBE932480821D005D7FDE /* NetworkHelper.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		80044C00247ECEE8008F2484 /* macOS UI Tests */ = {
-			isa = PBXGroup;
-			children = (
-				80057420247F05F900087158 /* AppLaunch.swift */,
-				80057428247F064A00087158 /* TouchBar.swift */,
-				8005742A247F065A00087158 /* FullScreen.swift */,
-				80057422247F05FA00087158 /* Info.plist */,
-			);
-			path = "macOS UI Tests";
-			sourceTree = "<group>";
-		};
-		80B38FDF247DD047008F5BEE /* Unit Tests */ = {
-			isa = PBXGroup;
-			children = (
-				80C85E332481C42600E1BFF3 /* Models.swift */,
-				80C85E372481C45900E1BFF3 /* Ingredients.swift */,
-				80C85E352481C44A00E1BFF3 /* Calories.swift */,
-				040B684D2478876300899813 /* InAppPurchases.swift */,
-				80B39008247DD845008F5BEE /* Networking.swift */,
-				7FDCBE9524808228005D7FDE /* Helpers */,
-				040B684324786C5400899813 /* Info.plist */,
-			);
-			path = "Unit Tests";
-			sourceTree = "<group>";
-		};
-		80B38FE0247DD04F008F5BEE /* iOS UI Tests */ = {
-			isa = PBXGroup;
-			children = (
-				80B38FE8247DD0F9008F5BEE /* AppLaunch.swift */,
-				8017D02924802E1D0058786C /* Menu.swift */,
-				8017D02524802DF90058786C /* Favorites.swift */,
-				8017D02724802E060058786C /* Rewards.swift */,
-				8017D0232480288F0058786C /* ProtectedResources.swift */,
-				80044C01247ED006008F2484 /* ScrollingPerformance.swift */,
-				80C85E392481C48000E1BFF3 /* Helpers */,
-				80B38FEA247DD0F9008F5BEE /* Info.plist */,
-			);
-			path = "iOS UI Tests";
-			sourceTree = "<group>";
-		};
-		80C85E392481C48000E1BFF3 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				FAA573B6247E254C009E7AA8 /* SystemAlert.swift */,
-				7FD7CAAC2485BC2E006C83C3 /* Extension.swift */,
-				7FD7CAA82485B0E5006C83C3 /* Fruta iOS UI Tests-Bridging-Header.h */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		9E77DEA724845CAC0077175F /* ChartView */ = {
-			isa = PBXGroup;
-			children = (
-				9EEF19812484229500F5365E /* ChartView.swift */,
-			);
-			path = ChartView;
-			sourceTree = "<group>";
-		};
-		9E93A645247B8B240057344F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7FC1AA3B24832F0300A6CF1F /* HealthKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9E9CCA9F247F5F600010BD89 /* UtilityViews */ = {
-			isa = PBXGroup;
-			children = (
-				9E9CCAA0247F5F600010BD89 /* UtilityViews.h */,
-				9E9CCAB2247F5FA40010BD89 /* Views */,
-				9E9CCAB3247F5FAC0010BD89 /* Styles */,
-				9E9CCAA1247F5F600010BD89 /* Info.plist */,
-			);
-			path = UtilityViews;
-			sourceTree = "<group>";
-		};
-		9E9CCAB1247F5F910010BD89 /* Playgrounds */ = {
-			isa = PBXGroup;
-			children = (
-				9E9CCAB4247F6B430010BD89 /* SmoothieLab.playground */,
-			);
-			path = Playgrounds;
-			sourceTree = "<group>";
-		};
-		9E9CCAB2247F5FA40010BD89 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				9E53811424832AC000ABDF87 /* FlipView.swift */,
-				E6D988E2247A3A7C00FBD32D /* CardActionButton.swift */,
-				6D82FA26247D741900AC9E13 /* BubbleView.swift */,
-				5E1AC2B3247B462A00C63DCF /* CountButton.swift */,
-				9E77DEA724845CAC0077175F /* ChartView */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		9E9CCAB3247F5FAC0010BD89 /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-				E69D57A3247C702C00CF3385 /* CircleToggleStyle.swift */,
-				5E9FBFA12474A33800468580 /* SquishableButtonStyle.swift */,
-			);
-			path = Styles;
-			sourceTree = "<group>";
-		};
-		9ED9EC36248219D400076765 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				9ED9EC37248219E100076765 /* NutritionFacts */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -597,7 +408,6 @@
 			);
 			name = "Fruta macOS";
 			packageProductDependencies = (
-				9ED9EC3A24821A0200076765 /* NutritionFacts */,
 			);
 			productName = "Smoothies macOS";
 			productReference = 5E61240C244E8B32004DDFF7 /* Fruta.app */;
@@ -655,7 +465,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E612415244E8B32004DDFF7 /* Assets.xcassets in Resources */,
-				5E1AC2B6247B899200C63DCF /* Configuration.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1016,10 +825,6 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		9E538118248336BD00ABDF87 /* NutritionFacts */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = NutritionFacts;
-		};
-		9ED9EC3A24821A0200076765 /* NutritionFacts */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NutritionFacts;
 		};

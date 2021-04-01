@@ -6,7 +6,6 @@ The view that summarizes the smoothie and adjusts its layout based on the enviro
 */
 
 import SwiftUI
-import NutritionFacts
 
 struct SmoothieHeaderView: View {
     var smoothie: Smoothie

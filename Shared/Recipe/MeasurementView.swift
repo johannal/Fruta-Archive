@@ -6,7 +6,6 @@ A view that can display an arbritrary DisplayableMeasurement
 */
 
 import SwiftUI
-import NutritionFacts
 
 struct MeasurementView: View {
     let measurement: DisplayableMeasurement

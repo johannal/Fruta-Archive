@@ -6,7 +6,6 @@ The smoothie detail view that offers the smoothie for sale and lists its ingredi
 */
 
 import SwiftUI
-import NutritionFacts
 
 #if APPCLIP
 import StoreKit

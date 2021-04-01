@@ -6,7 +6,6 @@ A graphic that displays an Ingredient as a thumbnail, a card highlighting its im
 */
 
 import SwiftUI
-import NutritionFacts
 
 struct IngredientGraphic: View {
     var ingredient: Ingredient
