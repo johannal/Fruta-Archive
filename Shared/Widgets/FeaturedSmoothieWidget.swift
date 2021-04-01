@@ -8,12 +8,21 @@ import SwiftUI
 import Intents
 
 struct FeaturedSmoothieWidget: Widget {
+    var supportedFamilies: [WidgetFamily] {
+        #if os(iOS)
+        return [.systemSmall, .systemMedium, .systemLarge, .systemExtraLarge]
+        #else
+        return [.systemSmall, .systemMedium, .systemLarge]
+        #endif
+    }
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "FeaturedSmoothie", provider: Provider()) { entry in
             FeaturedSmoothieEntryView(entry: entry)
         }
         .configurationDisplayName("Featured Smoothie")
         .description("Displays the latest featured smoothie!")
+        .supportedFamilies(supportedFamilies)
     }
 }
 
