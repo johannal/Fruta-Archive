@@ -30,9 +30,9 @@ struct FrutaAppClip: App {
             return
         }
         
-        if let smoothieID = queryItems.first(where: { $0.name == "smoothie" })?.value {
-            model.selectSmoothie(id: smoothieID)
-        }
+//        if let smoothieID = queryItems.first(where: { $0.name == "smoothie" })?.value {
+//            model.selectSmoothie(id: smoothieID)
+//        }
         
         guard
             let payload = userActivity.appClipActivationPayload,

@@ -35,7 +35,7 @@ public struct CalorieCountView: View {
 // MARK: - Library Integration
 
 public struct SmoothieRowView_LibraryContent: LibraryContentProvider {
-    @LibraryContentBuilder public var views: [LibraryItem] {
+    public var views: [LibraryItem] {
         LibraryItem(
             CalorieCountView(nutritionFact: .banana),
             category: .control
