@@ -15,7 +15,7 @@ struct Smoothie: Identifiable, Codable {
 
 extension Smoothie {
     init?(for id: Smoothie.ID) {
-        guard let smoothie = Smoothie.all.first(where: { $0.id == id }) else { return nil }
+        guard let smoothie = Smoothie.all().first(where: { $0.id == id }) else { return nil }
         self = smoothie
     }
 
@@ -51,7 +51,15 @@ extension Smoothie: Hashable {
 
 // MARK: - Smoothie List
 extension Smoothie {
-    static let all: [Smoothie] = [
+    static func all(includingPaid: Bool = true) -> [Smoothie] {
+        if includingPaid {
+            return allSmoothies
+        } else {
+            return allSmoothies.filter { $0.hasFreeRecipe }
+        }
+    }
+
+    private static var allSmoothies: [Smoothie] = [
         .berryBlue,
         .carrotChops,
         .hulkingLemonade,
@@ -68,8 +76,6 @@ extension Smoothie {
         .thatsBerryBananas,
         .tropicalBlue
     ]
-    
-    static let allIDs: [Smoothie.ID] = all.map { $0.id }
 
     static let berryBlue = Smoothie(
         id: "berry-blue",

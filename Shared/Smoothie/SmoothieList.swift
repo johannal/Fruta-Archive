@@ -39,7 +39,7 @@ struct SmoothieList_Previews: PreviewProvider {
     static var previews: some View {
         ForEach([ColorScheme.light, .dark], id: \.self) { scheme in
             NavigationView {
-                SmoothieList(smoothies: Smoothie.all)
+                SmoothieList(smoothies: Smoothie.all())
                     .navigationTitle("Smoothies")
                     .environmentObject(FrutaModel())
             }

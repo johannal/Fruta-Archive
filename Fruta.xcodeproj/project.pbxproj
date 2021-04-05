@@ -645,7 +645,9 @@
 				6111A1D426157D870046AAA9 /* Widgets */,
 				5E612405244E8B32004DDFF7 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		5E6123FC244E8B32004DDFF7 /* Shared */ = {
 			isa = PBXGroup;
