@@ -49,7 +49,7 @@ struct RecipeView: View {
                     
                     VStack {
                         ForEach(0 ..< smoothie.measuredIngredients.count) { index in
-                            RecipeIngredientRow(measuredIngredient: smoothie.measuredIngredients[index], smoothieCount: smoothieCount)
+                            RecipeIngredientRow(measuredIngredient: smoothie.measuredIngredients[index].scaled(by: Double(smoothieCount)))
                                 .padding(.horizontal)
                             if index < smoothie.measuredIngredients.count - 1 {
                                 Divider()
@@ -80,31 +80,22 @@ struct RecipeView: View {
 
 struct RecipeIngredientRow: View {
     var measuredIngredient: MeasuredIngredient
-    var smoothieCount: Int
-    
+
     @State private var checked = false
-    
-    var ingredient: Ingredient {
-        measuredIngredient.ingredient
-    }
-    
-    var measurement: Measurement<UnitVolume> {
-        measuredIngredient.measurement * Double(smoothieCount)
-    }
     
     var body: some View {
         Button(action: { checked.toggle() }) {
             HStack {
-                ingredient.image
+                measuredIngredient.ingredient.image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .scaleEffect(ingredient.thumbnailCrop.scale * 1.25)
+                    .scaleEffect(measuredIngredient.ingredient.thumbnailCrop.scale * 1.25)
                     .frame(width: 60, height: 60)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(ingredient.name).font(.headline)
-                    MeasurementView(measurement: measurement)
+                    Text(measuredIngredient.ingredient.name).font(.headline)
+                    MeasurementView(measurement: measuredIngredient.measurement)
                 }
 
                 Spacer()

@@ -10,12 +10,11 @@ struct Smoothie: Identifiable, Codable {
     var title: String
     var description: String
     var measuredIngredients: [MeasuredIngredient]
-    var hasFreeRecipe = false
 }
 
 extension Smoothie {
     init?(for id: Smoothie.ID) {
-        guard let smoothie = Smoothie.all.first(where: { $0.id == id }) else { return nil }
+        guard let smoothie = Smoothie.all().first(where: { $0.id == id }) else { return nil }
         self = smoothie
     }
 
@@ -51,195 +50,190 @@ extension Smoothie: Hashable {
 
 // MARK: - Smoothie List
 extension Smoothie {
-    static let all: [Smoothie] = [
-        .berryBlue,
-        .carrotChops,
-        .hulkingLemonade,
-        .crazyColada,
-        .kiwiCutie,
-        .lemonberry,
-        .loveYouBerryMuch,
-        .mangoJambo,
-        .oneInAMelon,
-        .peanutButterCup,
-        .papasPapaya,
-        .sailorMan,
-        .thatsASmore,
-        .thatsBerryBananas,
-        .tropicalBlue
-    ]
-    
-    static let allIDs: [Smoothie.ID] = all.map { $0.id }
+    @SmoothieArrayBuilder
+    static func all(includingPaid: Bool = true) -> [Smoothie] {
+        Smoothie(id: "berry-blue", title: "Berry Blue") {
+            "Filling and refreshing, this smoothie will fill you with joy!"
 
-    static let berryBlue = Smoothie(
-        id: "berry-blue",
-        title: "Berry Blue",
-        description: "Filling and refreshing, this smoothie will fill you with joy!",
-        measuredIngredients: [
-            MeasuredIngredient(.orange, measurement: Measurement(value: 1.5, unit: .cups)),
-            MeasuredIngredient(.blueberry, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.avocado, measurement: Measurement(value: 0.2, unit: .cups))
-        ],
-        hasFreeRecipe: true
-    )
-    
-    static let carrotChops = Smoothie(
-        id: "carrot-chops",
-        title: "Carrot Chops",
-        description: "Packed with vitamin A and C, Carrot Chops is a great way to start your day!",
-        measuredIngredients: [
-            MeasuredIngredient(.orange, measurement: Measurement(value: 1.5, unit: .cups)),
-            MeasuredIngredient(.carrot, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.mango, measurement: Measurement(value: 0.5, unit: .cups))
-        ],
-        hasFreeRecipe: true
-    )
+            Ingredient.orange.measured(with: .cups).scaled(by: 1.5)
+            Ingredient.blueberry.measured(with: .cups)
+            Ingredient.avocado.measured(with: .cups).scaled(by: 0.2)
+        }
 
-    static let crazyColada = Smoothie(
-        id: "crazy-colada",
-        title: "Crazy Colada",
-        description: "Enjoy the tropical flavors of coconut and pineapple!",
-        measuredIngredients: [
-            MeasuredIngredient(.pineapple, measurement: Measurement(value: 1.5, unit: .cups)),
-            MeasuredIngredient(.almondMilk, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.coconut, measurement: Measurement(value: 0.5, unit: .cups))
-        ]
-    )
-    
-    static let hulkingLemonade = Smoothie(
-        id: "hulking-lemonade",
-        title: "Hulking Lemonade",
-        description: "This is not just any lemonade. It will give you powers you'll struggle to control!",
-        measuredIngredients: [
-            MeasuredIngredient(.lemon, measurement: Measurement(value: 1.5, unit: .cups)),
-            MeasuredIngredient(.spinach, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.avocado, measurement: Measurement(value: 0.2, unit: .cups)),
-            MeasuredIngredient(.water, measurement: Measurement(value: 0.2, unit: .cups))
-        ]
-    )
-    
-    static let kiwiCutie = Smoothie(
-        id: "kiwi-cutie",
-        title: "Kiwi Cutie",
-        description: "Kiwi Cutie is beautiful inside and out! Packed with nutrients to start your day!",
-        measuredIngredients: [
-            MeasuredIngredient(.kiwi, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.orange, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.spinach, measurement: Measurement(value: 1, unit: .cups))
-        ]
-    )
-    
-    static let lemonberry = Smoothie(
-        id: "lemonberry",
-        title: "Lemonberry",
-        description: "A refreshing blend that's a real kick!",
-        measuredIngredients: [
-            MeasuredIngredient(.raspberry, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.strawberry, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.lemon, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.water, measurement: Measurement(value: 0.5, unit: .cups))
-        ]
-    )
-    
-    static let loveYouBerryMuch = Smoothie(
-        id: "love-you-berry-much",
-        title: "Love You Berry Much",
-        description: "If you love berries berry berry much, you will love this one!",
-        measuredIngredients: [
-            MeasuredIngredient(.strawberry, measurement: Measurement(value: 0.75, unit: .cups)),
-            MeasuredIngredient(.blueberry, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.raspberry, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.water, measurement: Measurement(value: 0.5, unit: .cups))
-        ]
-    )
-    
-    static let mangoJambo = Smoothie(
-        id: "mango-jambo",
-        title: "Mango Jambo",
-        description: "Dance around with this delicious tropical blend!",
-        measuredIngredients: [
-            MeasuredIngredient(.mango, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.pineapple, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.water, measurement: Measurement(value: 0.5, unit: .cups))
-        ]
-    )
-    
-    static let oneInAMelon = Smoothie(
-        id: "one-in-a-melon",
-        title: "One in a Melon",
-        description: "Feel special this summer with the coolest drink in our menu!",
-        measuredIngredients: [
-            MeasuredIngredient(.watermelon, measurement: Measurement(value: 2, unit: .cups)),
-            MeasuredIngredient(.raspberry, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.water, measurement: Measurement(value: 0.5, unit: .cups))
-        ]
-    )
-    
-    static let papasPapaya = Smoothie(
-        id: "papas-papaya",
-        title: "Papa's Papaya",
-        description: "Papa would be proud of you if he saw you drinking this!",
-        measuredIngredients: [
-            MeasuredIngredient(.orange, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.mango, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.papaya, measurement: Measurement(value: 0.5, unit: .cups))
-        ]
-    )
-    
-    static let peanutButterCup = Smoothie(
-        id: "peanut-butter-cup",
-        title: "Peanut Butter Cup",
-        description: "Ever wondered what it was like to drink a peanut butter cup? Wonder no more!",
-        measuredIngredients: [
-            MeasuredIngredient(.almondMilk, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.banana, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.chocolate, measurement: Measurement(value: 2, unit: .tablespoons)),
-            MeasuredIngredient(.peanutButter, measurement: Measurement(value: 1, unit: .tablespoons))
-        ]
-    )
-    
-    static let sailorMan = Smoothie(
-        id: "sailor-man",
-        title: "Sailor Man",
-        description: "Get strong with this delicious spinach smoothie!",
-        measuredIngredients: [
-            MeasuredIngredient(.orange, measurement: Measurement(value: 1.5, unit: .cups)),
-            MeasuredIngredient(.spinach, measurement: Measurement(value: 1, unit: .cups))
-        ]
-    )
-    
-    static let thatsASmore = Smoothie(
-        id: "thats-a-smore",
-        title: "That's a Smore!",
-        description: "When the world seems to rock like you've had too much choc, that's a smore!",
-        measuredIngredients: [
-            MeasuredIngredient(.almondMilk, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.coconut, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.chocolate, measurement: Measurement(value: 1, unit: .tablespoons))
-        ]
-    )
-    
-    static let thatsBerryBananas = Smoothie(
-        id: "thats-berry-bananas",
-        title: "That's Berry Bananas!",
-        description: "You'll go crazy with this classic!",
-        measuredIngredients: [
-            MeasuredIngredient(.almondMilk, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.banana, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.strawberry, measurement: Measurement(value: 1, unit: .cups))
-        ],
-        hasFreeRecipe: true
-    )
-    
-    static let tropicalBlue = Smoothie(
-        id: "tropical-blue",
-        title: "Tropical Blue",
-        description: "A delicious blend of tropical fruits and blueberries will have you sambaing around like you never knew you could!",
-        measuredIngredients: [
-            MeasuredIngredient(.almondMilk, measurement: Measurement(value: 1, unit: .cups)),
-            MeasuredIngredient(.banana, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.blueberry, measurement: Measurement(value: 0.5, unit: .cups)),
-            MeasuredIngredient(.mango, measurement: Measurement(value: 0.5, unit: .cups))
-        ]
-    )
+        Smoothie(id: "carrot-chops", title: "Carrot Chops") {
+            "Packed with vitamin A and C, Carrot Chops is a great way to start your day!"
+
+            Ingredient.orange.measured(with: .cups).scaled(by: 1.5)
+            Ingredient.carrot.measured(with: .cups).scaled(by: 0.5)
+            Ingredient.mango.measured(with: .cups).scaled(by: 0.5)
+        }
+
+        if includingPaid {
+            Smoothie(id: "crazy-colada", title: "Crazy Colada") {
+                "Enjoy the tropical flavors of coconut and pineapple!"
+                Ingredient.pineapple.measured(with: .cups).scaled(by: 1.5)
+                Ingredient.almondMilk.measured(with: .cups)
+                Ingredient.coconut.measured(with: .cups).scaled(by: 0.5)
+            }
+
+            Smoothie(id: "hulking-lemonade", title: "Hulking Lemonade") {
+                "This is not just any lemonade. It will give you powers you'll struggle to control!"
+
+                Ingredient.lemon.measured(with: .cups).scaled(by: 1.5)
+                Ingredient.spinach.measured(with: .cups)
+                Ingredient.avocado.measured(with: .cups).scaled(by: 0.2)
+                Ingredient.water.measured(with: .cups).scaled(by: 0.2)
+            }
+
+            Smoothie(id: "kiwi-cutie", title: "Kiwi Cutie") {
+                "Kiwi Cutie is beautiful inside and out! Packed with nutrients to start your day!"
+
+                Ingredient.kiwi.measured(with: .cups)
+                Ingredient.orange.measured(with: .cups)
+                Ingredient.spinach.measured(with: .cups)
+            }
+
+            Smoothie( id: "lemonberry", title: "Lemonberry") {
+                "A refreshing blend that's a real kick!"
+
+                Ingredient.raspberry.measured(with: .cups)
+                Ingredient.strawberry.measured(with: .cups)
+                Ingredient.lemon.measured(with: .cups).scaled(by: 0.5)
+                Ingredient.water.measured(with: .cups).scaled(by: 0.5)
+
+            }
+
+            Smoothie(id: "love-you-berry-much", title: "Love You Berry Much") {
+                "If you love berries berry berry much, you will love this one!"
+
+                Ingredient.strawberry.measured(with: .cups).scaled(by: 0.75)
+                Ingredient.blueberry.measured(with: .cups).scaled(by: 0.5)
+                Ingredient.raspberry.measured(with: .cups).scaled(by: 0.5)
+                Ingredient.water.measured(with: .cups).scaled(by: 0.5)
+            }
+
+            Smoothie(id: "mango-jambo", title: "Mango Jambo") {
+                "Dance around with this delicious tropical blend!"
+
+                Ingredient.mango.measured(with: .cups)
+                Ingredient.pineapple.measured(with: .cups).scaled(by: 0.5)
+                Ingredient.water.measured(with: .cups).scaled(by: 0.5)
+            }
+
+            Smoothie(id: "one-in-a-melon", title: "One in a Melon") {
+                "Feel special this summer with the coolest drink in our menu!"
+
+                Ingredient.watermelon.measured(with: .cups).scaled(by: 2)
+                Ingredient.raspberry.measured(with: .cups)
+                Ingredient.water.measured(with: .cups).scaled(by: 0.5)
+            }
+
+            Smoothie(id: "papas-papaya", title: "Papa's Papaya") {
+                "Papa would be proud of you if he saw you drinking this!"
+
+                Ingredient.orange.measured(with: .cups)
+                Ingredient.mango.measured(with: .cups).scaled(by: 0.5)
+                Ingredient.papaya.measured(with: .cups).scaled(by: 0.5)
+            }
+
+            Smoothie(id: "peanut-butter-cup", title: "Peanut Butter Cup") {
+                "Ever wondered what it was like to drink a peanut butter cup? Wonder no more!"
+
+                Ingredient.almondMilk.measured(with: .cups)
+                Ingredient.banana.measured(with: .cups).scaled(by: 0.5)
+                Ingredient.chocolate.measured(with: .tablespoons).scaled(by: 2)
+                Ingredient.peanutButter.measured(with: .tablespoons)
+            }
+
+            Smoothie(id: "sailor-man", title: "Sailor Man") {
+                "Get strong with this delicious spinach smoothie!"
+
+                Ingredient.orange.measured(with: .cups).scaled(by: 1.5)
+                Ingredient.spinach.measured(with: .cups)
+            }
+
+            Smoothie(id: "thats-a-smore", title: "That's a Smore!") {
+                "When the world seems to rock like you've had too much choc, that's a smore!"
+
+                Ingredient.almondMilk.measured(with: .cups)
+                Ingredient.coconut.measured(with: .cups).scaled(by: 0.5)
+                Ingredient.chocolate.measured(with: .tablespoons)
+            }
+        }
+
+        Smoothie(id: "thats-berry-bananas", title: "That's Berry Bananas!") {
+            "You'll go crazy with this classic!"
+
+            Ingredient.almondMilk.measured(with: .cups)
+            Ingredient.banana.measured(with: .cups)
+            Ingredient.strawberry.measured(with: .cups)
+        }
+
+        if includingPaid {
+            Smoothie(id: "tropical-blue", title: "Tropical Blue") {
+                "A delicious blend of tropical fruits and blueberries will have you sambaing around like you never knew you could!"
+
+                Ingredient.almondMilk.measured(with: .cups)
+                Ingredient.banana.measured(with: .cups).scaled(by: 0.5)
+                Ingredient.blueberry.measured(with: .cups).scaled(by: 0.5)
+                Ingredient.mango.measured(with: .cups).scaled(by: 0.5)
+            }
+        }
+        else {
+            print("Only got free smoothies!")
+        }
+    }
+
+    // Used in previews.
+    static var berryBlue: Smoothie { Smoothie(for: "berry-blue")! }
+    static var lemonberry: Smoothie { Smoothie(for: "lemonberry")! }
+    static var oneInAMelon: Smoothie { Smoothie(for: "one-in-a-melon")! }
+    static var thatsASmore: Smoothie { Smoothie(for: "thats-a-smore")! }
+    static var thatsBerryBananas: Smoothie { Smoothie(for: "thats-berry-bananas")! }
+}
+
+extension Smoothie {
+    init(id: Smoothie.ID, title: String, @SmoothieBuilder _ makeIngredients: () -> (String, [MeasuredIngredient])) {
+        let (description, ingredients) = makeIngredients()
+        self.init(id: id, title: title, description: description, measuredIngredients: ingredients)
+    }
+}
+
+@resultBuilder
+enum SmoothieBuilder {
+    static func buildBlock(_ description: String, _ ingredients: MeasuredIngredient...) -> (String, [MeasuredIngredient]) {
+        return (description, ingredients)
+    }
+
+    @available(*, unavailable, message: "first statement of SmoothieBuilder must be its description String")
+    static func buildBlock(_ ingredients: MeasuredIngredient...) -> (String, [MeasuredIngredient]) {
+        fatalError()
+    }
+}
+
+@resultBuilder
+enum SmoothieArrayBuilder {
+    static func buildEither(first component: [Smoothie]) -> [Smoothie] {
+        return component
+    }
+
+    static func buildEither(second component: [Smoothie]) -> [Smoothie] {
+        return component
+    }
+
+    static func buildOptional(_ component: [Smoothie]?) -> [Smoothie] {
+        return component ?? []
+    }
+
+    static func buildExpression(_ expression: Smoothie) -> [Smoothie] {
+        return [expression]
+    }
+
+    static func buildExpression(_ expression: ()) -> [Smoothie] {
+        return []
+    }
+
+    static func buildBlock(_ smoothies: [Smoothie]...) -> [Smoothie] {
+        return smoothies.flatMap { $0 }
+    }
 }

@@ -9,11 +9,7 @@ struct RecipeList: View {
     @EnvironmentObject private var model: FrutaModel
     
     var smoothies: [Smoothie] {
-        if model.allRecipesUnlocked {
-            return Smoothie.all
-        } else {
-            return Smoothie.all.filter { $0.hasFreeRecipe }
-        }
+        Smoothie.all(includingPaid: model.allRecipesUnlocked)
     }
     
     var backgroundColor: Color {

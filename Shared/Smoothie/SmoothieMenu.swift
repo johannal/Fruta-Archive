@@ -8,7 +8,7 @@ import SwiftUI
 struct SmoothieMenu: View {
     
     var body: some View {
-        SmoothieList(smoothies: Smoothie.all)
+        SmoothieList(smoothies: Smoothie.all())
             .navigationTitle("Menu")
     }
     
