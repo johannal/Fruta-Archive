@@ -186,6 +186,10 @@ extension Smoothie {
 
     // Used in previews.
     static var berryBlue: Smoothie { Smoothie(for: "berry-blue")! }
+    static var kiwiCutie: Smoothie { Smoothie(for: "kiwi-cutie")! }
+    static var hulkingLemonade: Smoothie { Smoothie(for: "hulking-lemonade")! }
+    static var mangoJambo: Smoothie { Smoothie(for: "mango-jambo")! }
+    static var tropicalBlue: Smoothie { Smoothie(for: "tropical-blue")! }
     static var lemonberry: Smoothie { Smoothie(for: "lemonberry")! }
     static var oneInAMelon: Smoothie { Smoothie(for: "one-in-a-melon")! }
     static var thatsASmore: Smoothie { Smoothie(for: "thats-a-smore")! }
