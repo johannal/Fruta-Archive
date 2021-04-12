@@ -1,13 +1,11 @@
 //
-//  Fruta_iOS_Unit_Tests.swift
-//  Fruta iOS Unit Tests
-//
-//  Created by Jake Sawyer on 4/12/21.
+//  UnitTests
+//  Fruta Unit Tests
 //
 
 import XCTest
 
-class Fruta_iOS_Unit_Tests: XCTestCase {
+class UnitTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
