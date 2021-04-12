@@ -44,6 +44,16 @@
                ReferencedContainer = "container:Fruta.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6111AE0C2624F59D0003EE8C"
+               BuildableName = "Fruta macOS Unit Tests.xctest"
+               BlueprintName = "Fruta macOS Unit Tests"
+               ReferencedContainer = "container:Fruta.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
