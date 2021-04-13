@@ -20,6 +20,8 @@ The Fruta project is meant to lead app developers by example, if you find anythi
 
 ## Known Issues
 
+You may need to use the iOS15.0 toolchain when building and running the iOS targets.
+
 Star builds between Star21A214a and Star21A219b will brick prod-fused T2 Macs' bridgeOS. Upgrade with caution and double check livability when choosing a host OS.
 
 Fruta running on builds of Star before 21A212 will not render any visual effect blurs. If you plan to show the macOS version of Fruta you must be on a (safe) recent version of Star, which at the time of writing there is no known recommendation (as 219b has issues with Xcode builds).
