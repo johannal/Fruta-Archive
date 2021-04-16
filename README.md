@@ -6,6 +6,8 @@ Fruta 2.0 is a multiplatform app which improves on last year's release by featur
 
 This year's base version of Fruta will include simple iOS and macOS app targets without any submodules, packages, playgrounds, or associated targets (including tests). All extended functionality that introduce extra signing, entitlement, or capability requirements are moved to new "Extended" targets which include things like Apple Pay, Sign in with Apple, App Clip, Widgets, Tests, and some other features.
 
+Once you identify which variant of target to use, feel free to delete the unneeded targets for your demo. Ideally you can also drop the "Extended" term from your target and scheme names, but that's not a requirement.
+
 ## WWDC 2021 Sessions
 
 For use in WWDC sessions, feel free to branch off of `main` and modify Fruta to fit your project. Make sure you identify if you want to use the basic or extended targets, described above.
