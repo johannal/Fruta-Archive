@@ -69,7 +69,7 @@ extension Smoothie {
         }
 
         if includingPaid {
-            Smoothie(id: "crazy-colada", title: "Crazy Colada") {
+            Smoothie(id: "pina-y-coco", title: "Piña y Coco") {
                 "Enjoy the tropical flavors of coconut and pineapple!"
                 Ingredient.pineapple.measured(with: .cups).scaled(by: 1.5)
                 Ingredient.almondMilk.measured(with: .cups)
@@ -162,7 +162,7 @@ extension Smoothie {
         }
 
         Smoothie(id: "thats-berry-bananas", title: "That's Berry Bananas!") {
-            "You'll go crazy with this classic!"
+            "You'll go bananas with this classic!"
 
             Ingredient.almondMilk.measured(with: .cups)
             Ingredient.banana.measured(with: .cups)
