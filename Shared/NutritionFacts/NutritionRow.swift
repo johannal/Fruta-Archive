@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-public struct NutritionRow : View {
+public struct NutritionRow: View {
     public var nutrition: Nutrition
 
     public init(nutrition: Nutrition) {
@@ -26,6 +26,7 @@ public struct NutritionRow : View {
             Spacer()
             Text(nutritionValue)
                 .fontWeight(.semibold)
+                .foregroundStyle(.secondary)
         }
         .font(.footnote)
     }
@@ -34,6 +35,7 @@ public struct NutritionRow : View {
 struct NutritionRow_Previews: PreviewProvider {
     static var previews: some View {
         let nutrition = Nutrition(
+            id: "iron",
             name: "Iron",
             measurement: Measurement(
                 value: 25,

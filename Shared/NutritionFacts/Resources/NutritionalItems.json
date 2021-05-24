@@ -1,11 +1,7 @@
 {
     "banana" : {
         "identifier" : "banana",
-        "localizedFoodItemNames" : {
-            "en" : "Banana",
-            "de" : "Banane",
-            "pt" : "Banana"
-        },
+        "localizedFoodItemName" : "Banana",
         "referenceMass" : "100 g",
         "density" : "225 g per 1 cup",
         "totalSaturatedFat" : "0.252 g",
@@ -25,11 +21,7 @@
     },
     "blueberry" : {
         "identifier" : "blueberry",
-        "localizedFoodItemNames" : {
-            "en" : "Blueberry",
-            "de" : "Blaubeere",
-            "pt" : "Mirtilo"
-        },
+        "localizedFoodItemName" : "Blueberry",
         "referenceMass" : "100 g",
         "density" : "148 g per 1 cup",
         "totalSaturatedFat" : "0.252 g",
@@ -49,11 +41,7 @@
     },
     "watermelon" : {
         "identifier" : "watermelon",
-        "localizedFoodItemNames" : {
-            "en" : "Watermelon",
-            "de" : "Wassermelone",
-            "pt" : "Melancia"
-        },
+        "localizedFoodItemName" : "Watermelon",
         "referenceMass" : "122 g",
         "density" : "154 g per 1 cup",
         "totalSaturatedFat" : "0 g",
@@ -73,11 +61,7 @@
     },
     "mango" : {
         "identifier" : "mango",
-        "localizedFoodItemNames" : {
-            "en" : "Mango",
-            "de" : "Mango",
-            "pt" : "Manga"
-        },
+        "localizedFoodItemName" : "Mango",
         "referenceMass" : "165 g",
         "density" : "165 g per 1 cup",
         "totalSaturatedFat" : "0.2 g",
@@ -97,11 +81,7 @@
     },
     "kiwi" : {
         "identifier" : "kiwi",
-        "localizedFoodItemNames" : {
-            "en" : "Kiwi",
-            "de" : "Kiwi",
-            "pt" : "Kiwi"
-        },
+        "localizedFoodItemName" : "Kiwi",
         "referenceMass" : "180 g",
         "density" : "180 g per 1 cup",
         "totalSaturatedFat" : "0.1 g",
@@ -121,11 +101,7 @@
     },
     "coconut" : {
         "identifier" : "coconut",
-        "localizedFoodItemNames" : {
-            "en" : "Coconut",
-            "de" : "Kokosnuss",
-            "pt" : "Coco"
-        },
+        "localizedFoodItemName" : "Coconut",
         "referenceMass" : "80 g",
         "density" : "80 g per 1 cup",
         "totalSaturatedFat" : "23.8 g",
@@ -145,11 +121,7 @@
     },
     "peanut-butter" : {
         "identifier" : "peanut-butter",
-        "localizedFoodItemNames" : {
-            "en" : "Peanut Butter",
-            "de" : "Erdnusbutter",
-            "pt" : "Manteiga de Amendoim"
-        },
+        "localizedFoodItemName" : "Peanut Butter",
         "referenceMass" : "258 g",
         "density" : "258 g per 1 cup",
         "totalSaturatedFat" : "27 g",
@@ -169,11 +141,7 @@
     },
     "chocolate" : {
         "identifier" : "chocolate",
-        "localizedFoodItemNames" : {
-            "en" : "Chocolate",
-            "de" : "Schokolade",
-            "pt" : "Chocolate"
-        },
+        "localizedFoodItemName" : "Chocolate",
         "referenceMass" : "240 g",
         "density" : "43 g per 0.33 cup",
         "totalSaturatedFat" : "64 g",
@@ -193,11 +161,7 @@
     },
     "pineapple" : {
         "identifier" : "pineapple",
-        "localizedFoodItemNames" : {
-            "en" : "Pineapple",
-            "de" : "Ananas",
-            "pt" : "Abacaxi"
-        },
+        "localizedFoodItemName" : "Pineapple",
         "referenceMass" : "165 g",
         "density" : "165 g per 1 cup",
         "totalSaturatedFat" : "0 g",
@@ -217,11 +181,7 @@
     },
     "strawberry" : {
         "identifier" : "strawberry",
-        "localizedFoodItemNames" : {
-            "en" : "Strawberry",
-            "de" : "Erdbeere",
-            "pt" : "Morango"
-        },
+        "localizedFoodItemName" : "Strawberry",
         "referenceMass" : "232 g",
         "density" : "232 g per 1 cup",
         "totalSaturatedFat" : "0 g",
@@ -241,11 +201,7 @@
     },
     "carrot" : {
         "identifier" : "carrot",
-        "localizedFoodItemNames" : {
-            "en" : "Carrot",
-            "de" : "Karotte",
-            "pt" : "Cenoura"
-        },
+        "localizedFoodItemName" : "Carrot",
         "referenceMass" : "110 g",
         "density" : "110 g per 1 cup",
         "totalSaturatedFat" : "0 g",
@@ -265,11 +221,7 @@
     },
     "spinach" : {
         "identifier" : "spinach",
-        "localizedFoodItemNames" : {
-            "en" : "Spinach",
-            "de" : "Spinat",
-            "pt" : "Espinafre"
-        },
+        "localizedFoodItemName" : "Spinach",
         "referenceMass" : "30 g",
         "density" : "30 g per 1 cup",
         "totalSaturatedFat" : "0 g",
@@ -289,11 +241,7 @@
     },
     "orange" : {
         "identifier" : "orange",
-        "localizedFoodItemNames" : {
-            "en" : "Orange",
-            "de" : "Orange",
-            "pt" : "Laranja"
-        },
+        "localizedFoodItemName" : "Orange",
         "referenceMass" : "248 g",
         "density" : "248 g per 1 cup",
         "totalSaturatedFat" : "0.1 g",
@@ -313,11 +261,7 @@
     },
     "raspberry" : {
         "identifier" : "raspberry",
-        "localizedFoodItemNames" : {
-            "en" : "Raspberry",
-            "de" : "Himbeere",
-            "pt" : "Framboesa"
-        },
+        "localizedFoodItemName" : "Raspberry",
         "referenceMass" : "123 g",
         "density" : "123 g per 1 cup",
         "totalSaturatedFat" : "0 g",
@@ -337,11 +281,7 @@
     },
     "papaya" : {
         "identifier" : "papaya",
-        "localizedFoodItemNames" : {
-            "en" : "Papaya",
-            "de" : "Papaya",
-            "pt" : "Mamão"
-        },
+        "localizedFoodItemName" : "Papaya",
         "referenceMass" : "100 g",
         "density" : "230 g per 1 cup",
         "totalSaturatedFat" : "0 g",
@@ -361,11 +301,7 @@
     },
     "lemon" : {
         "identifier" : "lemon",
-        "localizedFoodItemNames" : {
-            "en" : "Lemon",
-            "de" : "Zitrone",
-            "pt" : "Limão"
-        },
+        "localizedFoodItemName" : "Lemon",
         "referenceMass" : "212 g",
         "density" : "212 g per 1 cup",
         "totalSaturatedFat" : "0.1 g",
@@ -385,11 +321,7 @@
     },
     "avocado" : {
         "identifier" : "avocado",
-        "localizedFoodItemNames" : {
-            "en" : "Avocado",
-            "de" : "Avocado",
-            "pt" : "Abacate"
-        },
+        "localizedFoodItemName" : "Avocado",
         "referenceMass" : "230 g",
         "density" : "230 g per 1 cup",
         "totalSaturatedFat" : "4.9 g",
@@ -409,11 +341,7 @@
     },
     "almond-milk" : {
         "identifier" : "almond-milk",
-        "localizedFoodItemNames" : {
-            "en" : "Almond Milk",
-            "de" : "Mandelmilch",
-            "pt" : "Leite de Amêndoas"
-        },
+        "localizedFoodItemName" : "Almond Milk",
         "referenceMass" : "240 g",
         "density" : "240 g per 1 cup",
         "totalSaturatedFat" : "0 g",

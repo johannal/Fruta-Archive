@@ -11,7 +11,7 @@ struct RewardsCard: View {
     var hasAccount: Bool
     var compact = false
     
-    var spacing: CGFloat {
+    var spacing: Double {
         compact ? 10 : 20
     }
     
@@ -22,7 +22,7 @@ struct RewardsCard: View {
     var body: some View {
         VStack {
             VStack(spacing: 0) {
-                Text("Rewards Card")
+                Text("Rewards Card", comment: "Header for rewards card")
                     .font(compact ? Font.subheadline.bold() : Font.title2.bold())
                     .padding(.top, spacing)
                 
@@ -46,22 +46,22 @@ struct RewardsCard: View {
                 .opacity(hasAccount ? 1 : 0.5)
                 .padding(spacing)
             }
-            .background(Rectangle().fill(BackgroundStyle()))
+            .background()
             .clipShape(RoundedRectangle(cornerRadius: spacing, style: .continuous))
-            .accessibility(label: Text("\(totalStamps) of 10 points earned"))
+            .accessibility(label: Text("\(totalStamps) of 10 points earned", comment: "Accessibility label for number of points earned"))
             
             if !compact {
                 Group {
                     if hasAccount {
-                        Text(totalStamps < 10 ? "You are \(10 - totalStamps) points away from a free smoothie!"
-                                : "Congratulations, you got yourself a free smoothie!")
+                        Text("You are \(10 - totalStamps) points away from a free smoothie!",
+                             comment: "Label showing the number of points needed to get a free smoothie in rewards card view")
                     } else {
-                        Text("Sign up to get rewards!")
+                        Text("Sign up to get rewards!", comment: "Label shown in rewards card view when no account has been created yet")
                     }
                 }
                 .font(Font.system(.headline, design: .rounded).bold())
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color("rewards-foreground"))
+                .foregroundStyle(Color("rewards-foreground"))
                 .padding([.horizontal], 20)
             }
         }
@@ -72,7 +72,7 @@ struct RewardsCard: View {
 extension RewardsCard {
     
     struct StampSlot: View {
-        enum Status {
+        enum Status { // swiftlint:disable:this nesting
             case unstamped
             case stampedAnimated(delayIndex: Int)
             case stamped
@@ -93,7 +93,7 @@ extension RewardsCard {
                         .font(.system(size: compact ? 24 : 30))
                         .scaleEffect(stamped ? 1 : 2)
                         .opacity(stamped ? 1 : 0)
-                        .foregroundColor(Color("rewards-foreground"))
+                        .foregroundStyle(Color("rewards-foreground"))
                 default:
                     EmptyView()
                 }

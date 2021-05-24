@@ -7,14 +7,8 @@ import SwiftUI
 
 struct FlipView<Front: View, Back: View>: View {
     var visibleSide: FlipViewSide
-    var front: Front
-    var back: Back
-
-    init(visibleSide: FlipViewSide = .front, @ViewBuilder front: () -> Front, @ViewBuilder back: () -> Back) {
-        self.visibleSide = visibleSide
-        self.front = front()
-        self.back = back()
-    }
+    @ViewBuilder var front: Front
+    @ViewBuilder var back: Back
 
     var body: some View {
         ZStack {
@@ -81,9 +75,9 @@ struct FlipModifier: AnimatableModifier {
 struct FlipView_Previews: PreviewProvider {
     static var previews: some View {
         FlipView(visibleSide: .front) {
-            Text("Front Side")
+            Text(verbatim: "Front Side")
         } back: {
-            Text("Back Side")
+            Text(verbatim: "Back Side")
         }
     }
 }

@@ -1,6 +1,6 @@
 //
 //  DisplayableMeasurement.swift
-//  
+//  Fruta
 //
 
 import Foundation
@@ -18,11 +18,12 @@ extension DisplayableMeasurement {
 }
 
 extension Measurement: DisplayableMeasurement {
-    public func localizedSummary(unitStyle: MeasurementFormatter.UnitStyle = .long, unitOptions: MeasurementFormatter.UnitOptions = [.providedUnit]) -> String {
-        let mf = MeasurementFormatter()
-        mf.unitStyle = unitStyle
-        mf.unitOptions = unitOptions
-        return mf.string(from: self)
+    public func localizedSummary(unitStyle: MeasurementFormatter.UnitStyle = .long,
+                                 unitOptions: MeasurementFormatter.UnitOptions = [.providedUnit]) -> String {
+        let formatter = MeasurementFormatter()
+        formatter.unitStyle = unitStyle
+        formatter.unitOptions = unitOptions
+        return formatter.string(from: self)
     }
 
     public var unitImage: Image {

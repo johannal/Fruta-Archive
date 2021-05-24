@@ -32,7 +32,7 @@ struct IngredientGraphic: View {
             
             if style == .cardFront {
                 cardControls(for: .front)
-                    .foregroundColor(ingredient.title.color)
+                    .foregroundStyle(ingredient.title.color)
                     .opacity(ingredient.title.opacity)
                     .blendMode(ingredient.title.blendMode)
             }
@@ -45,16 +45,15 @@ struct IngredientGraphic: View {
                     }
                     cardControls(for: .back)
                 }
-                .backgroundMaterial(.thin)
+                .background(.thinMaterial)
             }
         }
         .frame(minWidth: 130, maxWidth: 400, maxHeight: 500)
+        .compositingGroup()
         .clipShape(shape)
-        .overlay(
-            shape
-                .inset(by: 0.5)
-                .stroke(Color.primary.opacity(0.1), lineWidth: 1)
-        )
+        .overlay {
+            shape.strokeBorder(.quaternary, lineWidth: 0.5)
+        }
         .contentShape(shape)
         .accessibilityElement(children: .contain)
     }
@@ -77,8 +76,9 @@ struct IngredientGraphic: View {
         Text(ingredient.name.uppercased())
             .padding(.horizontal, 8)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .lineLimit(1)
-            .foregroundColor(ingredient.title.color)
+            .lineLimit(2)
+            .multilineTextAlignment(.center)
+            .foregroundStyle(ingredient.title.color)
             .rotationEffect(displayingAsCard ? ingredient.title.rotation: .degrees(0))
             .opacity(ingredient.title.opacity)
             .blendMode(ingredient.title.blendMode)

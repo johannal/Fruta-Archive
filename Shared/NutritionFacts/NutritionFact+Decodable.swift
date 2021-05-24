@@ -4,16 +4,28 @@
 
 import Foundation
 
-let nutritionFacts: [String : NutritionFact] = {
-    let jsonURL = Bundle.main.url(forResource: "NutritionalItems", withExtension: "json")!
-    let jsonData = try! Data(contentsOf: jsonURL)
-    return try! JSONDecoder().decode(Dictionary<String, NutritionFact>.self, from: jsonData)
-}()
+//let nutritionFacts: [String: NutritionFact] = {
+//    let jsonURL = Bundle.main.url(forResource: "NutritionalItems", withExtension: "json")!
+//    let jsonData = try! Data(contentsOf: jsonURL)
+//
+//
+//    return try! JSONDecoder().decode(Dictionary<String, NutritionFact>.self, from: jsonData)
+//}()
+
+let nutritionFacts: [String: NutritionFact] = {
+        if let jsonURL = Bundle.main.url(forResource: "NutritionalItems", withExtension: "json"),
+           let jsonData = try? Data(contentsOf: jsonURL),
+           let facts = try? JSONDecoder().decode(Dictionary<String, NutritionFact>.self, from: jsonData) {
+            return facts
+        } else {
+            return [String: NutritionFact]()
+        }
+    }()
 
 extension NutritionFact: Decodable {
     enum CodingKeys: String, CodingKey {
         case identifier
-        case localizedFoodItemNames
+        case localizedFoodItemName
         case referenceMass
         case density
         case totalSaturatedFat
@@ -36,7 +48,7 @@ extension NutritionFact: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
 
         identifier = try values.decode(String.self, forKey: .identifier)
-        localizedFoodItemNames = try values.decode(Dictionary<String, String>.self, forKey: .localizedFoodItemNames)
+        localizedFoodItemName = try values.decode(String.self, forKey: .localizedFoodItemName)
 
         let densityString = try values.decode(String.self, forKey: .density)
         density = Density.fromString(densityString)

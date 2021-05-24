@@ -3,11 +3,10 @@
 //  Fruta
 //
 
-
 import SwiftUI
 
 struct CardActionButton: View {
-    var label: String
+    var label: LocalizedStringKey
     var systemImage: String
     var action: () -> Void
 

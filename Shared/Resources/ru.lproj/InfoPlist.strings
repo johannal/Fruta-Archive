@@ -1,0 +1,17 @@
+/* 
+  InfoPlist.strings
+  Fruta
+
+  Created by Jake Sawyer on 5/24/21.
+  
+*/
+
+/* Bundle display name */
+"CFBundleDisplayName" = "Фрута";
+
+/* Bundle name */
+"CFBundleName" = "Фрута";
+
+/* Copyright (human-readable) */
+"NSHumanReadableCopyright" = "© 2020–2021 Apple. Все права защищены.";
+

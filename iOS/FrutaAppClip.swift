@@ -9,7 +9,7 @@ import CoreLocation
 
 @main
 struct FrutaAppClip: App {
-    @StateObject private var model = FrutaModel()
+    @StateObject private var model = Model()
     
     var body: some Scene {
         WindowGroup {
@@ -30,9 +30,9 @@ struct FrutaAppClip: App {
             return
         }
         
-//        if let smoothieID = queryItems.first(where: { $0.name == "smoothie" })?.value {
-//            model.selectSmoothie(id: smoothieID)
-//        }
+        if let smoothieID = queryItems.first(where: { $0.name == "smoothie" })?.value {
+            model.selectedSmoothieID = smoothieID
+        }
         
         guard
             let payload = userActivity.appClipActivationPayload,

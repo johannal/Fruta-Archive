@@ -6,71 +6,76 @@
 import SwiftUI
 
 struct RecipeList: View {
-    @EnvironmentObject private var model: FrutaModel
+    @State private var selection: Smoothie.ID?
+    @EnvironmentObject private var model: Model
     
     var smoothies: [Smoothie] {
         Smoothie.all(includingPaid: model.allRecipesUnlocked)
-    }
-    
-    var backgroundColor: Color {
-        #if os(iOS)
-        return Color(.secondarySystemFill)
-        #else
-        return Color(.windowBackgroundColor)
-        #endif
-    }
-    
-    var cardOffscreenOffset: CGFloat {
-        #if os(iOS)
-        return -300
-        #else
-        return 600
-        #endif
-    }
-    
-    @ViewBuilder
-    var unlockButton: some View {
-        #if EXTENDED
-        Group {
-            if !model.allRecipesUnlocked {
-                if let product = model.unlockAllRecipesProduct {
-                    RecipeUnlockButton(product: .init(for: product), purchaseAction: { model.purchaseProduct(product) })
-                } else {
-                    RecipeUnlockButton(product: .init(title: "Unlock All Recipes",
-                                description: "Loading...", availability: .unavailable), purchaseAction: {})
-                }
-            }
-        }
-        .scaleEffect(model.allRecipesUnlocked ? 0.8 : 1)
-        .offset(y: model.allRecipesUnlocked ? cardOffscreenOffset : 0)
-        .clipped()
-        #endif
+            .filter { $0.matches(model.searchString) }
+            .sorted { $0.title.localizedCompare($1.title) == .orderedAscending }
     }
     
     var body: some View {
         List {
             #if os(iOS)
-            unlockButton.listRowInsets(EdgeInsets())
+            Section {
+                unlockButton
+                    .listRowInsets(EdgeInsets())
+                    .listRowBackground(EmptyView())
+                    .listSectionSeparator(.hidden)
+                    .listRowSeparator(.hidden)
+            }
+            .listSectionSeparator(.hidden)
             #endif
+            
             ForEach(smoothies) { smoothie in
-                NavigationLink(destination: RecipeView(smoothie: smoothie)) {
+                NavigationLink(tag: smoothie.id, selection: $selection) {
+                    RecipeView(smoothie: smoothie)
+                } label: {
                     SmoothieRow(smoothie: smoothie)
                 }
             }
         }
-        .overlay(Group {
-            #if os(macOS)
+        #if os(iOS)
+        .listStyle(.insetGrouped)
+        #elseif os(macOS)
+        .safeAreaInset(edge: .bottom, spacing: 0) {
             unlockButton
-            #endif
-        }, alignment: .bottom)
-        .navigationTitle("Recipes")
+                .padding(8)
+        }
+        #endif
+        .navigationTitle(Text("Recipes", comment: "Title of the 'recipes' app section showing the list of smoothie recipes"))
         .animation(.spring(response: 1, dampingFraction: 1), value: model.allRecipesUnlocked)
+        .accessibilityRotor("Favorite Smoothies", entries: smoothies.filter { model.isFavorite(smoothie: $0) }, entryLabel: \.title)
+        .accessibilityRotor("Smoothies", entries: smoothies, entryLabel: \.title)
+        .searchable(text: $model.searchString) {
+            ForEach(model.searchSuggestions) { suggestion in
+                Text(suggestion.name).searchCompletion(suggestion.name)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var unlockButton: some View {
+        Group {
+            if !model.allRecipesUnlocked {
+                if let product = model.unlockAllRecipesProduct {
+                    RecipeUnlockButton(product: .init(for: product), purchaseAction: { model.purchaseProduct(product) })
+                } else {
+                    RecipeUnlockButton(
+                        product: .init(title: "Unlock All Recipes", description: "Loading…", availability: .unavailable),
+                        purchaseAction: {}
+                    )
+                }
+            }
+        }
+        .transition(.scale.combined(with: .opacity))
     }
 }
 
 struct RecipeList_Previews: PreviewProvider {
-    static let unlocked: FrutaModel = {
-        let store = FrutaModel()
+    static let unlocked: Model = {
+        let store = Model()
         store.allRecipesUnlocked = true
         return store
     }()
@@ -79,7 +84,7 @@ struct RecipeList_Previews: PreviewProvider {
             NavigationView {
                 RecipeList()
             }
-            .environmentObject(FrutaModel())
+            .environmentObject(Model())
             .previewDisplayName("Locked")
             
             NavigationView {

@@ -4,16 +4,12 @@
 
 import SwiftUI
 
-public struct NutritionFactView : View {
+public struct NutritionFactView: View {
 
     public var nutritionFact: NutritionFact
 
     public init(nutritionFact: NutritionFact) {
         self.nutritionFact = nutritionFact.converted(toVolume: .cups(1))
-    }
-
-    var kilocalories: Int {
-        Int(nutritionFact.kilocalories)
     }
 
     public var body: some View {
@@ -24,13 +20,14 @@ public struct NutritionFactView : View {
                     .bold()
                 Text("Serving Size 1 Cup")
                     .font(.footnote)
-                Text("\(kilocalories) Calories")
+                Text(nutritionFact.energy.formatted(.measurement(width: .wide, usage: .food)))
                     .fontWeight(.semibold)
                     .padding(.top, 10)
             }
-            .padding(.vertical)
+            .padding(20)
             
             Divider()
+                .padding(.horizontal, 20)
 
             ScrollView {
                 VStack(spacing: 0) {
@@ -41,11 +38,9 @@ public struct NutritionFactView : View {
                         Divider()
                     }
                 }
-                .padding(.bottom)
+                .padding([.bottom, .horizontal], 20)
             }
         }
-        .padding(.horizontal)
-        .padding()
     }
 }
 

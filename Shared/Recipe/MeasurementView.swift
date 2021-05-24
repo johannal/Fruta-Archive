@@ -6,24 +6,12 @@
 import SwiftUI
 
 struct MeasurementView: View {
-    let measurement: DisplayableMeasurement
-
-    init(measurement: DisplayableMeasurement) {
-        self.measurement = measurement
-    }
-
-    var backgroundColor: Color {
-        #if os(iOS)
-        return Color(.tertiarySystemFill)
-        #else
-        return Color(.windowBackgroundColor)
-        #endif
-    }
+    var measurement: DisplayableMeasurement
 
     var body: some View {
         HStack {
             measurement.unitImage
-                .foregroundColor(.secondary)
+                .foregroundStyle(.secondary)
 
             Text(measurement.localizedSummary())
         }

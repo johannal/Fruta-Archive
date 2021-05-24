@@ -11,15 +11,16 @@ struct RewardsCardWidget: Widget {
         StaticConfiguration(kind: "RewardsCard", provider: Provider()) { entry in
             RewardsCardEntryView(entry: entry)
         }
-        .configurationDisplayName("Rewards Card")
-        .description("See your progress towards your next free smoothie!")
+        .configurationDisplayName(Text("Rewards Card", comment: "The name shown for the widget when the user adds or edits it"))
+        .description(Text("See your progress towards your next free smoothie!",
+                          comment: "Description shown for the widget when the user adds or edits it"))
         .supportedFamilies([.systemMedium, .systemLarge])
     }
 }
 
 extension RewardsCardWidget {
     struct Provider: TimelineProvider {
-        typealias Entry = RewardsCardWidget.Entry
+        typealias Entry = RewardsCardWidget.Entry // swiftlint:disable:this nesting
         
         func placeholder(in context: Context) -> Entry {
             Entry(date: Date(), points: 4)

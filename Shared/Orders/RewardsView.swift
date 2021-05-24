@@ -9,20 +9,7 @@ import SwiftUI
 import AuthenticationServices
 
 struct RewardsView: View {
-    @EnvironmentObject private var model: FrutaModel
-    
-    @ViewBuilder
-    var signUpButton: some View {
-        #if EXTENDED
-        SignInWithAppleButton(.signUp, onRequest: { _ in }, onCompletion: model.authorizeUser)
-            .frame(minWidth: 100, maxWidth: 400)
-            .padding(.horizontal, 20)
-        #else
-        Button(action: {}) {
-            Text("Sign Up")
-        }
-        #endif
-    }
+    @EnvironmentObject private var model: Model
     
     var body: some View {
         ZStack {
@@ -34,30 +21,36 @@ struct RewardsView: View {
             .onDisappear {
                 model.clearUnstampedPoints()
             }
-            
-            if !model.hasAccount {
-                Group {
-                    #if os(iOS)
-                    signUpButton.frame(height: 45)
-                    #else
-                    signUpButton.frame(minWidth: 100, maxWidth: 400)
-                    #endif
-                }
-                .padding(.horizontal, 20)
-                .padding()
-                .frame(maxWidth: .infinity)
-                .backgroundMaterial(.thin)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(BubbleBackground())
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            VStack(spacing: 0) {
+                Divider()
+                if !model.hasAccount {
+                    SignInWithAppleButton(.signUp, onRequest: { _ in }, onCompletion: model.authorizeUser)
+                        .frame(minWidth: 100, maxWidth: 400)
+                        .padding(.horizontal, 20)
+                        #if os(iOS)
+                        .frame(height: 45)
+                        #endif
+                        .padding(.horizontal, 20)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                }
+            }
+            .background(.bar)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(BubbleBackground().ignoresSafeArea())
     }
 }
 
 struct SmoothieRewards_Previews: PreviewProvider {
-    static let dataStore: FrutaModel = {
-        var dataStore = FrutaModel()
+    static let dataStore: Model = {
+        var dataStore = Model()
         dataStore.createAccount()
         dataStore.orderSmoothie(.thatsBerryBananas)
         dataStore.orderSmoothie(.thatsBerryBananas)
@@ -73,7 +66,7 @@ struct SmoothieRewards_Previews: PreviewProvider {
             RewardsView()
                 .preferredColorScheme(.dark)
             RewardsView()
-                .environmentObject(FrutaModel())
+                .environmentObject(Model())
         }
         .environmentObject(dataStore)
     }

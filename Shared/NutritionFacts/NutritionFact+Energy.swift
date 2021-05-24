@@ -17,7 +17,7 @@ public struct CalorieBreakdown {
         return [
             ("Protein", percentProtein),
             ("Fat", percentFat),
-            ("Carbohydrates", percentCarbohydrate),
+            ("Carbohydrates", percentCarbohydrate)
         ]
     }
 }
@@ -40,7 +40,7 @@ extension NutritionFact {
     }
 
     public var energy: Measurement<UnitEnergy> {
-        return Measurement(value: kilocalories, unit: .kilocalories).converted(to: .kilojoules)
+        return Measurement<UnitEnergy>(value: kilocalories, unit: .kilocalories)
     }
 
     public var calorieBreakdown: CalorieBreakdown {

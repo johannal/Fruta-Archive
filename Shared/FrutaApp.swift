@@ -7,7 +7,7 @@ import SwiftUI
 
 @main
 struct FrutaApp: App {
-    @StateObject private var model = FrutaModel()
+    @StateObject private var model = Model()
     
     var body: some Scene {
         WindowGroup {

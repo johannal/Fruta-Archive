@@ -8,7 +8,7 @@ import AuthenticationServices
 import StoreKit
 
 struct OrderPlacedView: View {
-    @EnvironmentObject private var model: FrutaModel
+    @EnvironmentObject private var model: Model
     
     #if APPCLIP
     @State private var presentingAppStoreOverlay = false
@@ -26,21 +26,10 @@ struct OrderPlacedView: View {
         return !model.hasAccount
     }
     
-    @ViewBuilder
-    var signUpButton: some View {
-        #if EXTENDED
-        SignInWithAppleButton(.signUp, onRequest: { _ in }, onCompletion: model.authorizeUser)
-            .frame(minWidth: 100, maxWidth: 400)
-            .padding(.horizontal, 20)
-        #else
-        Button(action: {}) {
-            Text("Sign Up")
-        }
-        #endif
-    }
-    
 /// - Tag: ActiveCompilationConditionTag
     var body: some View {
+//#-code-listing(ActiveCompilationCondition)
+
         VStack(spacing: 0) {
             Spacer()
             
@@ -53,7 +42,7 @@ struct OrderPlacedView: View {
             }
             
             #if APPCLIP
-            Text("App Store Overlay")
+            Text(verbatim: "App Store Overlay")
                 .hidden()
                 .appStoreOverlay(isPresented: $presentingAppStoreOverlay) {
                     SKOverlay.AppClipConfiguration(position: .bottom)
@@ -67,8 +56,9 @@ struct OrderPlacedView: View {
             }
             #endif
         }
+//#-end-code-listing
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
+        .background {
             ZStack {
                 if let order = model.order {
                     order.smoothie.image
@@ -78,12 +68,13 @@ struct OrderPlacedView: View {
                     Color("order-placed-background")
                 }
                 
-                Color.clear
-                    .backgroundMaterial(.ultraThin)
-                    .opacity(model.order!.isReady ? 0 : 1)
+                if model.order?.isReady == false {
+                    Rectangle()
+                        .fill(.ultraThinMaterial)
+                }
             }
             .ignoresSafeArea()
-        )
+        }
         .animation(.spring(response: 0.25, dampingFraction: 1), value: orderReady)
         .animation(.spring(response: 0.25, dampingFraction: 1), value: model.hasAccount)
         .onAppear {
@@ -105,9 +96,10 @@ struct OrderPlacedView: View {
                 subtitle: "We will notify you when your order is ready."
             )
         } back: {
+            let smoothieName = model.order?.smoothie.title ?? String(localized: "Smoothie", comment: "Fallback name for smoothie")
             Card(
                 title: "Your smoothie is ready!",
-                subtitle: "\(model.order?.smoothie.title ?? "Your smoothie") is ready to be picked up."
+                subtitle: "\(smoothieName) is ready to be picked up."
             )
         }
         .animation(.flipCard, value: orderReady)
@@ -120,12 +112,12 @@ struct OrderPlacedView: View {
                 Text("Sign up to get rewards!")
                     .font(Font.headline.bold())
                 
-                #if os(iOS)
-                signUpButton
+                SignInWithAppleButton(.signUp, onRequest: { _ in }, onCompletion: model.authorizeUser)
+                    .frame(minWidth: 100, maxWidth: 400)
+                    .padding(.horizontal, 20)
+                    #if os(iOS)
                     .frame(height: 45)
-                #else
-                signUpButton
-                #endif
+                    #endif
             } else {
                 #if APPCLIP
                 if presentingAppStoreOverlay {
@@ -139,44 +131,40 @@ struct OrderPlacedView: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .backgroundMaterial(.thin)
+        .background(.bar)
     }
     
     struct Card: View {
-        var title: String
-        var subtitle: String
+        var title: LocalizedStringKey
+        var subtitle: LocalizedStringKey
         
         var body: some View {
-            Circle()
-                .fill(BackgroundStyle())
-                .overlay(
-                    VStack(spacing: 16) {
-                        Text(title)
-                            .font(Font.title.bold())
-                            .textCase(.uppercase)
-                            .layoutPriority(1)
-                        Text(subtitle)
-                            .font(.system(.headline, design: .rounded))
-                            .foregroundColor(.secondary)
-                    }
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 36)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                )
-                .frame(width: 300, height: 300)
+            VStack(spacing: 16) {
+                Text(title)
+                    .font(Font.title.bold())
+                    .textCase(.uppercase)
+                    .layoutPriority(1)
+                Text(subtitle)
+                    .font(.system(.headline, design: .rounded))
+                    .foregroundStyle(.secondary)
+            }
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, 36)
+            .frame(width: 300, height: 300)
+            .background(in: Circle())
         }
     }
 }
 
 struct OrderPlacedView_Previews: PreviewProvider {
-    static let orderReady: FrutaModel = {
-        let model = FrutaModel()
+    static let orderReady: Model = {
+        let model = Model()
         model.orderSmoothie(Smoothie.berryBlue)
         model.orderReadyForPickup()
         return model
     }()
-    static let orderNotReady: FrutaModel = {
-        let model = FrutaModel()
+    static let orderNotReady: Model = {
+        let model = Model()
         model.orderSmoothie(Smoothie.berryBlue)
         return model
     }()

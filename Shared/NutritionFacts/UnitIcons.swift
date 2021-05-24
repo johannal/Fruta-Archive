@@ -16,17 +16,17 @@ extension Unit {
 }
 
 // Allow Unit subclasses to provide icon overrides
-fileprivate protocol UnitIconProvider {
+private protocol UnitIconProvider {
     var customUnitIcon: Image { get }
 }
 
-extension UnitMass : UnitIconProvider {
+extension UnitMass: UnitIconProvider {
     var customUnitIcon: Image {
         Image(systemName: "scalemass.fill")
     }
 }
 
-extension UnitVolume : UnitIconProvider {
+extension UnitVolume: UnitIconProvider {
     var customUnitIcon: Image {
         switch symbol {
         // Icons included in the asset catalog

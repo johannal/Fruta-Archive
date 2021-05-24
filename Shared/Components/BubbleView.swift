@@ -6,9 +6,9 @@
 import SwiftUI
 
 struct BubbleView: View {
-    var size: CGFloat = 30
-    var xOffset: CGFloat = 0
-    var yOffset: CGFloat = 0
+    var size: Double = 30
+    var xOffset: Double = 0
+    var yOffset: Double = 0
     var opacity: Double = 0.1
     
     @State private var shimmer: Bool = .random()
@@ -45,13 +45,13 @@ struct BubbleView_Previews: PreviewProvider {
                 BubbleView(opacity: 0.9)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .foregroundColor(.red)
+            .foregroundStyle(.red)
             
             ZStack {
                 BubbleView(opacity: 0.9)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            .foregroundColor(.blue)
+            .foregroundStyle(.blue)
             
             ZStack {
                 BubbleView(size: 300, yOffset: -150)

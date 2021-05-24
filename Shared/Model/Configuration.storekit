@@ -13,6 +13,11 @@
           "description" : "Make smoothies at home!",
           "displayName" : "Unlock All Recipes",
           "locale" : "en_US"
+        },
+        {
+          "description" : "Смузи в домашних условиях",
+          "displayName" : "Разблокируйте все рецепты",
+          "locale" : "ru"
         }
       ],
       "productID" : "com.example.apple-samplecode.fruta.unlock-recipes",

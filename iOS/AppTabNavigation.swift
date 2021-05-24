@@ -22,8 +22,11 @@ struct AppTabNavigation: View {
                 SmoothieMenu()
             }
             .tabItem {
-                Label("Menu", systemImage: "list.bullet")
-                    .accessibility(label: Text("Menu"))
+                Label {
+                    Text("Menu", comment: "Smoothie menu tab title")
+                } icon: {
+                    Image(systemName: "list.bullet")
+                }
             }
             .tag(Tab.menu)
             
@@ -31,7 +34,11 @@ struct AppTabNavigation: View {
                 FavoriteSmoothies()
             }
             .tabItem {
-                Label("Favorites", systemImage: "heart.fill")
+                Label {
+                    Text("Favorites", comment: "Favorite smoothies tab title")
+                } icon: {
+                    Image(systemName: "heart.fill")
+                }
             }
             .tag(Tab.favorites)
             
@@ -39,7 +46,11 @@ struct AppTabNavigation: View {
                 RewardsView()
             }
             .tabItem {
-                Label("Rewards", systemImage: "seal.fill")
+                Label {
+                    Text("Rewards", comment: "Smoothie rewards tab title")
+                } icon: {
+                    Image(systemName: "seal.fill")
+                }
             }
             .tag(Tab.rewards)
             
@@ -47,7 +58,11 @@ struct AppTabNavigation: View {
                 RecipeList()
             }
             .tabItem {
-                Label("Recipes", systemImage: "book.closed.fill")
+                Label {
+                    Text("Recipes", comment: "Smoothie recipes tab title")
+                } icon: {
+                    Image(systemName: "book.closed.fill")
+                }
             }
             .tag(Tab.recipes)
         }

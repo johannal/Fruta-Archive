@@ -20,15 +20,15 @@ struct FeaturedSmoothieWidget: Widget {
         StaticConfiguration(kind: "FeaturedSmoothie", provider: Provider()) { entry in
             FeaturedSmoothieEntryView(entry: entry)
         }
-        .configurationDisplayName("Featured Smoothie")
-        .description("Displays the latest featured smoothie!")
+        .configurationDisplayName(Text("Featured Smoothie", comment: "The name shown for the widget when the user adds or edits it"))
+        .description(Text("Displays the latest featured smoothie!", comment: "Description shown for the widget when the user adds or edits it"))
         .supportedFamilies(supportedFamilies)
     }
 }
 
 extension FeaturedSmoothieWidget {
     struct Provider: TimelineProvider {
-        typealias Entry = FeaturedSmoothieWidget.Entry
+        typealias Entry = FeaturedSmoothieWidget.Entry // swiftlint:disable:this nesting
        
         func placeholder(in context: Context) -> Entry {
             Entry(date: Date(), smoothie: .berryBlue)
@@ -79,20 +79,20 @@ struct FeaturedSmoothieEntryView: View {
         Text(entry.smoothie.description)
             .font(.subheadline)
     }
-    
+
     var calories: some View {
-        Text("\(entry.smoothie.kilocalories) Calories")
-            .foregroundColor(.secondary)
+        Text(entry.smoothie.energy.formatted(.measurement(width: .wide, usage: .food)))
+            .foregroundStyle(.secondary)
             .font(.subheadline)
     }
     
     var image: some View {
         Rectangle()
-            .overlay(
+            .overlay {
                 entry.smoothie.image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-            )
+            }
             .aspectRatio(1, contentMode: .fit)
             .clipShape(ContainerRelativeShape())
     }
@@ -130,7 +130,7 @@ struct FeaturedSmoothieEntryView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(BubbleBackground())
+        .background { BubbleBackground() }
     }
 }
 

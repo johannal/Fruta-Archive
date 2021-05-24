@@ -21,7 +21,7 @@ public struct Density {
 
 public struct NutritionFact {
     public var identifier: String
-    public var localizedFoodItemNames: [String : String]
+    public var localizedFoodItemName: String
 
     public var referenceMass: Measurement<UnitMass>
 
@@ -52,13 +52,6 @@ public struct NutritionFact {
 }
 
 extension NutritionFact {
-    public var localizedFoodItemName: String {
-        if let availablePreferredLanguage = Locale.preferredLanguages.first(where: { localizedFoodItemNames.keys.contains($0) }) {
-            return localizedFoodItemNames[availablePreferredLanguage]!
-        }
-        return localizedFoodItemNames["en"]!
-    }
-
     public func converted(toVolume newReferenceVolume: Measurement<UnitVolume>) -> NutritionFact {
         let newRefMassInCups = newReferenceVolume.converted(to: .cups).value
         let oldRefMassInCups = referenceMass.convertedToVolume(usingDensity: self.density).value
@@ -67,7 +60,7 @@ extension NutritionFact {
 
         return NutritionFact(
             identifier: identifier,
-            localizedFoodItemNames: localizedFoodItemNames,
+            localizedFoodItemName: localizedFoodItemName,
             referenceMass: referenceMass * scaleFactor,
             density: density,
             totalSaturatedFat: totalSaturatedFat * scaleFactor,
@@ -93,7 +86,7 @@ extension NutritionFact {
         let scaleFactor = newRefMassInGrams / oldRefMassInGrams
         return NutritionFact(
             identifier: identifier,
-            localizedFoodItemNames: localizedFoodItemNames,
+            localizedFoodItemName: localizedFoodItemName,
             referenceMass: newReferenceMass,
             density: density,
             totalSaturatedFat: totalSaturatedFat * scaleFactor,
@@ -125,12 +118,14 @@ extension NutritionFact {
 
 extension NutritionFact {
     /// Nutritional information is for 100 grams, unless a `mass` is specified.
-    public static func lookupFoodItem(_ foodItemIdentifier: String, forMass mass: Measurement<UnitMass> = Measurement(value: 100, unit: UnitMass.grams)) -> NutritionFact? {
+    public static func lookupFoodItem(_ foodItemIdentifier: String,
+                                      forMass mass: Measurement<UnitMass> = Measurement(value: 100, unit: .grams)) -> NutritionFact? {
         return nutritionFacts[foodItemIdentifier]?.converted(toMass: mass)
     }
 
     /// Nutritional information is for 1 cup, unless a `volume` is specified.
-    public static func lookupFoodItem(_ foodItemIdentifier: String, forVolume volume: Measurement<UnitVolume> = Measurement(value: 1, unit: UnitVolume.cups)) -> NutritionFact? {
+    public static func lookupFoodItem(_ foodItemIdentifier: String,
+                                      forVolume volume: Measurement<UnitVolume> = Measurement(value: 1, unit: .cups)) -> NutritionFact? {
         guard let nutritionFact = nutritionFacts[foodItemIdentifier] else {
             return nil
         }
@@ -161,7 +156,7 @@ extension NutritionFact {
     public static var zero: NutritionFact {
         NutritionFact(
             identifier: "",
-            localizedFoodItemNames: [:],
+            localizedFoodItemName: "",
             referenceMass: .grams(0),
             density: Density(mass: .grams(1), volume: .cups(1)),
             totalSaturatedFat: .grams(0),
@@ -193,7 +188,7 @@ extension NutritionFact {
 
         return NutritionFact(
             identifier: "",
-            localizedFoodItemNames: [:],
+            localizedFoodItemName: "",
             referenceMass: totalMass,
             density: Density(mass: totalMass, volume: totalVolume),
             totalSaturatedFat: lhs.totalSaturatedFat + rhs.totalSaturatedFat,
@@ -214,7 +209,6 @@ extension NutritionFact {
     }
 }
 
-
 // MARK: - CustomStringConvertible
 
 extension NutritionFact: CustomStringConvertible {
@@ -223,7 +217,6 @@ extension NutritionFact: CustomStringConvertible {
         return "\(referenceMass.converted(to: .grams).localizedSummary(unitStyle: .medium))" + suffix
     }
 }
-
 
 // MARK: - Volume <-> Mass Conversion
 
@@ -244,7 +237,6 @@ extension Measurement where UnitType == UnitMass {
         return density.volume * scale
     }
 }
-
 
 // MARK: - Convenience Accessors
 
