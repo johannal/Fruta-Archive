@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1200"
+   LastUpgradeVersion = "1300"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -38,7 +38,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8005741D247F05F900087158"
+               BlueprintIdentifier = "6111AE1A2624F5C30003EE8C"
                BuildableName = "Fruta macOS UI Tests.xctest"
                BlueprintName = "Fruta macOS UI Tests"
                ReferencedContainer = "container:Fruta.xcodeproj">
@@ -77,7 +77,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <StoreKitConfigurationFileReference
-         identifier = "../../Tests/Configuration.storekit">
+         identifier = "../../Shared/Model/Configuration.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
