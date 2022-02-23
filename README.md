@@ -1,6 +1,16 @@
+# Fruta (Archive)
+
+This is an archive of Fruta as it was being brought up as the 2021 hero app for WWDC. If you're looking for the latest release of Fruta ready for your own modification, check out the [currently shipping sample code release](https://developer.apple.com/documentation/swiftui/fruta_building_a_feature-rich_app_with_swiftui).
+
+If you want to make a change to an upcoming release of the Fruta sample code, please reach out to [Jake Sawyer](mailto:jake_sawyer@apple.com) and Zsolt [Kiraly](mailto:z.k@apple.com).
+
+Below content is from the archive.
+
+--------
+
 # Fruta 2.0 
 
-Fruta 2.0 is a multiplatform app which improves on last year's release by featuring Star and Sky APIs for use in the WWDC Keynote, State of the Union, and various sessions. A stripped down version will eventually be made available as an update to the [currently shipping sample code release](https://developer.apple.com/documentation/swiftui/fruta_building_a_feature-rich_app_with_swiftui).
+Fruta 2.0 is a multiplatform app which improves on last year's release by featuring Star and Sky APIs for use in the WWDC Keynote, State of the Union, and various sessions.
 
 ## Project Architecture
 
