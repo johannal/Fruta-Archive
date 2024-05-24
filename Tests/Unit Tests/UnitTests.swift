@@ -9,6 +9,9 @@ class UnitTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        func calculateTotalPrice(fruits: [String: Double]) -> Double {
+            return fruits.values.reduce(0, +)
+        }
     }
 
     override func tearDownWithError() throws {
