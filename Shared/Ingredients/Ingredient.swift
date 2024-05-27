@@ -23,7 +23,7 @@ struct Ingredient: Identifiable, Codable {
 extension Ingredient {
     static let all: [Ingredient] = [
         .avocado,
-        .almondMilk,
+        .oatMilk,
         .banana,
         .blueberry,
         .carrot,
