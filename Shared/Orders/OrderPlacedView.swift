@@ -93,7 +93,7 @@ struct OrderPlacedView: View {
         FlipView(visibleSide: orderReady ? .back : .front) {
             Card(
                 title: "Thank you for your order!",
-                subtitle: "We will notify you when your order is ready."
+                subtitle: "We will notify you when your order is ready for pickup."
             )
         } back: {
             let smoothieName = model.order?.smoothie.title ?? String(localized: "Smoothie", comment: "Fallback name for smoothie")
